@@ -1,0 +1,1053 @@
+[
+  {
+    "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:AmbientInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "Ambient"
+        },
+        "name": "AmbientInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:AmbientInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:HVACInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "HVAC"
+        },
+        "name": "HVACInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:HVACInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:WalkinFridgeInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "WalkinFridge"
+        },
+        "name": "WalkinFridgeInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:WalkinFreezerInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "WalkinFreezer"
+        },
+        "name": "WalkinFreezerInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:FryerInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "Fryer"
+        },
+        "name": "FryerInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:FryerInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:StandingFridgeInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "StandingFridge"
+        },
+        "name": "StandingFridgeInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:StandingFreezerInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "StandingFreezer"
+        },
+        "name": "StandingFreezerInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:ColdTableInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "ColdTable"
+        },
+        "name": "ColdTableInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:ColdTableInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:DishwasherInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "Dishwasher"
+        },
+        "name": "DishwasherInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:DishwasherInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:FirmWareUpdateInterface;1",
+        "@type": "Component",
+        "displayName": {
+          "en": "FirmWareUpdate"
+        },
+        "name": "FirmWareUpdateInterface",
+        "schema": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface;1"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:location;1",
+        "@type": [
+          "Property",
+          "Location"
+        ],
+        "displayName": {
+          "en": "Location"
+        },
+        "name": "location",
+        "schema": "geopoint"
+      }
+    ],
+    "displayName": {
+      "en": "LarouexSmartKitchen"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:outside_temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Outside Temperature"
+        },
+        "name": "outside_temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:outside_humidity;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Outside Humidity"
+        },
+        "name": "outside_humidity",
+        "schema": "double"
+      }
+    ],
+    "displayName": {
+      "en": "Ambient"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:larouexSmartKitchen2049:HVACInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:hvac_airflow_temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "HVAC Airflow Temperature"
+        },
+        "name": "hvac_airflow_temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:hvac_cfm_airflow;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "HVAC Airflow CFM"
+        },
+        "name": "hvac_cfm_airflow",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:hvac_rpm_mainmotor;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "HVAC Main Motor RPM"
+        },
+        "name": "hvac_rpm_mainmotor",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "HVAC"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Walkin Fridge Temperature"
+        },
+        "name": "walkin_fridge_temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_humidity;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Walkin Fridge Humidity"
+        },
+        "name": "walkin_fridge_humidity",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_door_open_count;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Walkin Fridge Door Open Count"
+        },
+        "name": "walkin_fridge_door_open_count",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_door_ajar;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Walkin Fridge Door Ajar"
+        },
+        "name": "walkin_fridge_door_ajar",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_compressor_health;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Walkin Fridge Compressor Health"
+        },
+        "name": "walkin_fridge_compressor_health",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "Walkin Fridge"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Walkin Freezer Temperature"
+        },
+        "name": "walkin_Freezer_temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_humidity;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Walkin Freezer Humidity"
+        },
+        "name": "walkin_Freezer_humidity",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_door_open_count;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Walkin Freezer Door Open Count"
+        },
+        "name": "walkin_Freezer_door_open_count",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_door_ajar;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Walkin Freezer Door Ajar"
+        },
+        "name": "walkin_Freezer_door_ajar",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_compressor_health;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Walkin Freezer Compressor Health"
+        },
+        "name": "walkin_Freezer_compressor_health",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "Walkin Freezer"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:larouexSmartKitchen2049:FryerInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:fryer_temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Fryer Temperature"
+        },
+        "name": "fryer_temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:fryer_oil_quality;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Fryer Oil Quality"
+        },
+        "name": "fryer_oil_quality",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:fryer_heater_health;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Fryer Heater Health"
+        },
+        "name": "fryer_heater_health",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "Fryer"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Standing Fridge Temperature"
+        },
+        "name": "Standing_fridge_temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_humidity;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Standing Fridge Humidity"
+        },
+        "name": "Standing_fridge_humidity",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_door_open_count;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Standing Fridge Door Open Count"
+        },
+        "name": "Standing_fridge_door_open_count",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_door_ajar;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Standing Fridge Door Ajar"
+        },
+        "name": "Standing_fridge_door_ajar",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_compressor_health;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Standing Fridge Compressor Health"
+        },
+        "name": "Standing_fridge_compressor_health",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "Standing Fridge"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Standing Freezer Temperature"
+        },
+        "name": "Standing_Freezer_temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_humidity;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Standing Freezer Humidity"
+        },
+        "name": "Standing_Freezer_humidity",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_door_open_count;1",
+        "@type": [
+          "Telemetry",
+          "Humidity"
+        ],
+        "displayName": {
+          "en": "Standing Freezer Door Open Count"
+        },
+        "name": "Standing_Freezer_door_open_count",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_door_ajar;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Standing Freezer Door Ajar"
+        },
+        "name": "Standing_Freezer_door_ajar",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_compressor_health;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Standing Freezer Compressor Health"
+        },
+        "name": "Standing_Freezer_compressor_health",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "Standing Freezer"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:outside_temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Cold Table Temperature"
+        },
+        "name": "cold_table_temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:outside_humidity;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Cold Table Compressor Health"
+        },
+        "name": "cold_table_compressor_health",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "Cold Table"
+    }
+  },
+  {
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ],
+    "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:dishwasher_temperature;1",
+        "@type": [
+          "Telemetry",
+          "Temperature"
+        ],
+        "displayName": {
+          "en": "Dishwasher Temperature"
+        },
+        "name": "dishwasher_temperature",
+        "schema": "double"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:dishwasher_wash_cycles;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Dishwasher Wash Cycles"
+        },
+        "name": "dishwasher_wash_cycles",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:dishwasher_motor_health;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Dishwasher Motor Health"
+        },
+        "name": "dishwasher_motor_health",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:dishwasher_heating_element_health;1",
+        "@type": [
+          "Telemetry",
+          "integer"
+        ],
+        "displayName": {
+          "en": "Dishwasher Heating Element Health"
+        },
+        "name": "dishwasher_heating_element_health",
+        "schema": "integer"
+      }
+    ],
+    "displayName": {
+      "en": "Dishwasher"
+    }
+  },
+  {
+    "@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Software Information"
+        },
+        "name": "sw_info",
+        "schema": {
+          "@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:brewer;1",
+              "displayName": {
+                "en": "Brewer Version"
+              },
+              "name": "brewer",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:cntl_board;1",
+              "displayName": {
+                "en": "Control PCBA"
+              },
+              "name": "cntl_board",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:cntl_board:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:cntl_board:schema:app_v;1",
+                    "displayName": {
+                      "en": "App Version"
+                    },
+                    "name": "app_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:sw_info:schema:cntl_board:schema:os_v;1",
+                    "displayName": {
+                      "en": "OS Version"
+                    },
+                    "name": "os_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:sw_info:schema:cntl_board:schema:boot_v;1",
+                    "displayName": {
+                      "en": "Boot Loader Version"
+                    },
+                    "name": "boot_v",
+                    "schema": "string"
+                  }
+                ]
+              }
+            },
+            {
+            	"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:comm_board;1",
+            	"displayName": {
+            		"en": "WiFi/Sensor PCBA"
+            	},
+            	"name": "comm_board",
+            	"schema": {
+            		"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:comm_board:schema;1",
+            		"@type": "Object",
+            		"displayName": {
+            			"en": "Object"
+            		},
+            		"fields": [{
+            				"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:comm_board:schema:app_v;1",
+            				"displayName": {
+            					"en": "App Version"
+            				},
+            				"name": "app_v",
+            				"schema": "string"
+            			},
+            			{
+            				"@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:sw_info:schema:comm_board:schema:os_v;1",
+            				"displayName": {
+            					"en": "OS Version"
+            				},
+            				"name": "os_v",
+            				"schema": "string"
+            			},
+            			{
+            				"@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:sw_info:schema:comm_board:schema:boot_v;1",
+            				"displayName": {
+            					"en": "Boot Loader Version"
+            				},
+            				"name": "boot_v",
+            				"schema": "string"
+            			}
+            		]
+            	}
+            },
+            {
+            	"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req;1",
+            	"displayName": {
+            		"en": "Firmware Download Request"
+            	},
+            	"name": "fwupdate_req",
+            	"schema": {
+            		"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema;1",
+            		"@type": "Object",
+            		"displayName": {
+            			"en": "Object"
+            		},
+            		"fields": [{
+            				"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:downloadId;1",
+            				"displayName": {
+            					"en": "Download ID"
+            				},
+            				"name": "downloadId",
+            				"schema": "string"
+            			},
+            			{
+            				"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:flags;1",
+            				"displayName": {
+            					"en": "Download Flags"
+            				},
+            				"name": "flags",
+            				"schema": "string"
+            			},
+            			{
+            				"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:numPackages;1",
+            				"displayName": {
+            					"en": "Number of Packages"
+            				},
+            				"name": "numPackages",
+            				"schema": "integer"
+            			},
+            			{
+            				"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo;1",
+            				"displayName": {
+            					"en": "Package Info"
+            				},
+            				"name": "packageInfo",
+            				"schema": {
+            					"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo:schema;1",
+            					"@type": "Object",
+            					"displayName": {
+            						"en": "Object"
+            					},
+            					"fields": [{
+            							"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo:schema:version;1",
+            							"displayName": {
+            								"en": "Version"
+            							},
+            							"name": "version",
+            							"schema": "string"
+            						},
+            						{
+            							"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo:schema:destination;1",
+            							"displayName": {
+            								"en": "Destination"
+            							},
+            							"name": "destination",
+            							"schema": "string"
+            						},
+            						{
+            							"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo:schema:meta;1",
+            							"displayName": {
+            								"en": "Meta Data"
+            							},
+            							"name": "meta",
+            							"schema": "string"
+            						},
+            						{
+            							"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo:schema:uri;1",
+            							"displayName": {
+            								"en": "URI"
+            							},
+            							"name": "uri",
+            							"schema": "string"
+            						},
+            						{
+            							"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo:schema:authKey;1",
+            							"displayName": {
+            								"en": "Auth Key"
+            							},
+            							"name": "authKey",
+            							"schema": "string"
+            						},
+            						{
+            							"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo:schema:authValue;1",
+            							"displayName": {
+            								"en": "Auth Value"
+            							},
+            							"name": "authValue",
+            							"schema": "string"
+            						},
+            						{
+            							"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo:schema:check;1",
+            							"displayName": {
+            								"en": "CRC"
+            							},
+            							"name": "check",
+            							"schema": "integer"
+            						},
+            						{
+            							"@id": "dtmi:larouexSmartKitchen2049:FirmWareUpdateInterface:sw_info:schema:fwupdate_req:schema:packageInfo:schema:size;1",
+            							"displayName": {
+            								"en": "Size"
+            							},
+            							"name": "size",
+            							"schema": "integer"
+            						}
+            					]
+            				}
+            			}
+            		]
+            	},
+            	"writable": true
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res;1",
+              "displayName": {
+                "en": "Firmware Download Response"
+              },
+              "name": "fwupdate_res",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:downloadId;1",
+                    "displayName": {
+                      "en": "Download ID"
+                    },
+                    "name": "downloadId",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:phase;1",
+                    "displayName": {
+                      "en": "Phase"
+                    },
+                    "name": "phase",
+                          "schema": {
+                            "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:phase:schema;1",
+                            "@type": "Enum",
+                            "enumValues": [
+                              {
+                                "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:phase:schema:PEND;1",
+                                "displayName": {
+                                  "en": "Pend"
+                                },
+                                "enumValue": "PEND",
+                                "name": "PEND"
+                              },
+                              {
+                                "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:phase:schema:FETCH;1",
+                                "displayName": {
+                                  "en": "Fetch"
+                                },
+                                "enumValue": "FETCH",
+                                "name": "FETCH"
+                              },
+                              {
+                                "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:phase:schema:INSTALL;1",
+                                "displayName": {
+                                  "en": "Install"
+                                },
+                                "enumValue": "INSTALL",
+                                "name": "INSTALL"
+                              },
+                              {
+                                "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:phase:schema:COMPLETE;1",
+                                "displayName": {
+                                  "en": "Complete"
+                                },
+                                "enumValue": "COMPLETE",
+                                "name": "COMPLETE"
+                              },
+                              {
+                                "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:phase:schema:CANCELED;1",
+                                "displayName": {
+                                  "en": "Download Canceled"
+                                },
+                                "enumValue": "CANCELED",
+                                "name": "CANCELED"
+                              }
+                            ],
+                            "valueSchema": "string"
+                          }
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:errCode;1",
+                          "displayName": {
+                            "en": "Transfer Error"
+                          },
+                          "name": "errCode",
+                          "schema": "integer"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages;1",
+                    "displayName": {
+                      "en": "Package list"
+                    },
+                    "name": "packages",
+                    "schema": {
+                      "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema;1",
+                      "@type": "Map",
+                      "mapKey": {
+                        "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageName;1",
+                        "displayName": {
+                          "en": "Package Name"
+                        },
+                        "name": "packageName",
+                        "schema": "string"
+                      },
+                      "mapValue": {
+                        "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageInfo;1",
+                        "displayName": {
+                          "en": "Package Info"
+                        },
+                        "name": "packageInfo",
+                        "schema": {
+                          "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageInfo:schema;1",
+                          "@type": "Object",
+                          "fields": [{
+                              "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageInfo:schema:downloadStatus;1",
+                              "comment": "Per package download status",
+                              "description": {
+                                "en": "Package Download Status"
+                              },
+                              "displayName": {
+                                "en": "Download Status"
+                              },
+                              "name": "downloadStatus",
+                              "schema": {
+                                "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageInfo:schema:downloadStatus:schema;1",
+                                "@type": "Enum",
+                                "enumValues": [{
+                                    "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageInfo:schema:downloadStatus:schema:PEND;1",
+                                    "displayName": {
+                                      "en": "Download Pending"
+                                    },
+                                    "enumValue": "PEND",
+                                    "name": "PEND"
+                                  },
+                                  {
+                                    "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageInfo:schema:downloadStatus:schema:FETCH;1",
+                                    "displayName": {
+                                      "en": "Download in Progress"
+                                    },
+                                    "enumValue": "FETCH",
+                                    "name": "FETCH"
+                                  },
+                                  {
+                                    "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageInfo:schema:downloadStatus:schema:COMPLETE;1",
+                                    "displayName": {
+                                      "en": "Download Complete"
+                                    },
+                                    "enumValue": "COMPLETE",
+                                    "name": "COMPLETE"
+                                  }
+                                ],
+                                "valueSchema": "string"
+                              }
+                            },
+                            {
+                              "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageInfo:schema:errCode;1",
+                              "displayName": {
+                                "en": "Error Code"
+                              },
+                              "name": "errCode",
+                              "schema": "integer"
+                            },
+                            {
+                              "@id": "dtmi:larouexSmartKitchen2049:FirmwareUpdateInterface:fwupdate_res:schema:packages:schema:packageInfo:schema:downloadPercent;1",
+                              "displayName": {
+                                "en": "Percent Download"
+                              },
+                              "name": "downloadPercent",
+                              "schema": "integer"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "writable": false
+            }
+          ]
+        }
+      }
+    ],
+    "displayName": {
+      "en": "FirmwareUpdate"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  }
+]

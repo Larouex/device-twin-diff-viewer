@@ -1,0 +1,21 @@
+{
+  "ServerDiscoveryName": "Smart Monitor for Cold Hub",
+  "Description": "Monitoring of Cold Hub",
+  "ApplicationUri": "urn:LarouexSmartKitchen:Server",
+  "TelemetryFrequencyInSeconds": 10,
+  "ReadTimeBetweenTemperatureInSeconds": 5,
+  "TemperatureFormat": "F",
+  "NameSpace": "ColdHub1",
+  "Status": {
+    "Pins": {
+      "Alert": 5,
+      "Wait": 6,
+      "Good": 16
+    }
+  },
+  "Device":{
+    "DeviceNamePrefix": "cold-hub-{id}",
+    "NameSpace": "coldHubStorage",
+    "DeviceCapabilityModelId": "dtmi:coldHubStorage:mainComponent;1"
+  }
+}

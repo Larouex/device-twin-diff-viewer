@@ -1,0 +1,15 @@
+# =============================================================================
+# `requirements.txt` installs all dependant packages
+# =============================================================================
+pip
+wheel
+setuptools
+virtualenv
+asyncio
+cryptography
+argparse
+azure.iot.hub
+azure.identity
+azure.keyvault.certificates
+azure.keyvault.secrets
+azure.keyvault.keys

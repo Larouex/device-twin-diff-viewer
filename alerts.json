@@ -1,0 +1,20 @@
+{
+  "Alerts": {
+    "Config":{
+        "Loaded": "Loaded Config.json configuration file: {0}",
+        "Updated": "Updated Config.json configuration file: {0}"
+    },
+    "DevicesCache":{
+      "Loaded": "Loaded DevicesCache.json configuration file: {0}",
+      "Updated": "Updated DevicesCache.json configuration file: {0}"
+    },
+    "Secrets":{
+      "Loaded": "Loaded Secrets.json configuration file: {0}",
+      "Updated": "Updated Secrets.json configuration file: {0}"
+    },
+    "Devices":{
+      "Loaded": "Loaded Devices.json configuration file: {0}",
+      "Updated": "Updated Devices.json configuration file: {0}"
+    }
+  }
+}

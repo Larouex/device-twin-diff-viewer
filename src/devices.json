@@ -1,0 +1,18 @@
+{
+	"Devices": [{
+		"SpecificDevices": [{
+			"Device": {
+				"Name": "cold-hub-test-2",
+				"Namespace": "coldHubStorage",
+				"DeviceCapabilityModelId": "dtmi:coldHubStorage:mainComponent;1"
+			}
+		}],
+		"PatternDevices": [{
+			"Device": {
+				"Name": "cold-hub-{id}",
+				"Namespace": "coldHubStorage",
+				"DeviceCapabilityModelId": "dtmi:coldHubStorage:mainComponent;1"
+			}
+		}]
+	}]
+}
