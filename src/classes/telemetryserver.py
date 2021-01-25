@@ -15,6 +15,7 @@ import logging
 
 # For dumping and Loading Address Space option
 from pathlib import Path
+from pubsub import pub
 
 # our classes
 from classes.config import Config
@@ -45,12 +46,7 @@ class TelemetryServer():
       self.map_telemetry_interfaces_variables = []
 
       # meta
-      self.application_uri = None
-      self.namespace = None
-      self.device_capability_model_id = None
-      self.device_capability_model = []
-      self.device_name_prefix = None
-      self.ignore_interface_ids = []
+      self.telemetry_payload = {}
 
 
     # -------------------------------------------------------------------------------
@@ -80,7 +76,11 @@ class TelemetryServer():
 
             value = variable["RangeValues"][int(variable["RangeValueCurrent"]) - 1]
             self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Value) : %s" % value)
+            self.telemetry_payload[variable["TelemetryName"]] = value
 
+          self.logger.info("[TELEMETRY SERVER LOOP] telemetry_payload : %s" % self.telemetry_payload)
+          pub.sendMessage(telemetry["InterfacelId"], arg1=self.telemetry_payload)
+          self.telemetry_payload = {}
 
         self.logger.info("[TELEMETRY SERVER LOOP] AWAITING: %s" % self.config["ServerFrequencyInSeconds"])
         await asyncio.sleep(self.config["ServerFrequencyInSeconds"])
