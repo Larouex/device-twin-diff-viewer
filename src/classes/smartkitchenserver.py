@@ -5,7 +5,7 @@
 #
 #   Online: https://github.com/Larouex/device-twin-diff-viewer
 #
-#   (c) 2020 Larouex Software Design LLC
+#   (c) 2021 Larouex Software Design LLC
 #   This code is licensed under MIT license (see LICENSE.txt for details)
 # ==================================================================================
 import json, sys, time, string, threading, asyncio, os, copy, datetime

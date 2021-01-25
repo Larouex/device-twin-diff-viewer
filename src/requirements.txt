@@ -8,6 +8,7 @@ virtualenv
 asyncio
 cryptography
 argparse
+pypubsub
 azure.iot.hub
 azure.identity
 azure.keyvault.certificates
