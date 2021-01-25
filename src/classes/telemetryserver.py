@@ -58,32 +58,30 @@ class TelemetryServer():
       # Telemetry Server Run
       self.logger.info("[TELEMETRY SERVER LOOP] STARTING")
 
-      while True:
+      for telemetry in self.map_telemetry:
+        self.logger.info("[TELEMETRY SERVER LOOP] NAME: %s" % telemetry["Name"])
+        self.logger.info("[TELEMETRY SERVER LOOP] INTERFACE: %s" % telemetry["InterfacelId"])
 
-        for telemetry in self.map_telemetry:
-          self.logger.info("[TELEMETRY SERVER LOOP] NAME: %s" % telemetry["Name"])
-          self.logger.info("[TELEMETRY SERVER LOOP] INTERFACE: %s" % telemetry["InterfacelId"])
+        for variable in telemetry["Variables"]:
+          self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Display Name): %s" % variable["DisplayName"])
+          self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Telemetry Name): %s" % variable["TelemetryName"])
 
-          for variable in telemetry["Variables"]:
-            self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Display Name): %s" % variable["DisplayName"])
-            self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Telemetry Name): %s" % variable["TelemetryName"])
+          # Update our iterator and boundaries
+          if int(variable["RangeValueCurrent"]) < int(variable["RangeValueCount"]):
+            variable["RangeValueCurrent"] = int(variable["RangeValueCurrent"]) + 1
+          else:
+            variable["RangeValueCurrent"] = 1
 
-            # Update our iterator and boundaries
-            if int(variable["RangeValueCurrent"]) < int(variable["RangeValueCount"]):
-              variable["RangeValueCurrent"] = int(variable["RangeValueCurrent"]) + 1
-            else:
-              variable["RangeValueCurrent"] = 1
+          value = variable["RangeValues"][int(variable["RangeValueCurrent"]) - 1]
+          self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Value) : %s" % value)
+          self.telemetry_payload[variable["TelemetryName"]] = value
 
-            value = variable["RangeValues"][int(variable["RangeValueCurrent"]) - 1]
-            self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Value) : %s" % value)
-            self.telemetry_payload[variable["TelemetryName"]] = value
+        self.logger.info("[TELEMETRY SERVER LOOP] telemetry_payload : %s" % self.telemetry_payload)
+        pub.sendMessage(telemetry["InterfacelId"], arg1=self.telemetry_payload)
+        self.telemetry_payload = {}
 
-          self.logger.info("[TELEMETRY SERVER LOOP] telemetry_payload : %s" % self.telemetry_payload)
-          pub.sendMessage(telemetry["InterfacelId"], arg1=self.telemetry_payload)
-          self.telemetry_payload = {}
-
-        self.logger.info("[TELEMETRY SERVER LOOP] AWAITING: %s" % self.config["ServerFrequencyInSeconds"])
-        await asyncio.sleep(self.config["ServerFrequencyInSeconds"])
+      self.logger.info("[TELEMETRY SERVER LOOP] AWAITING: %s" % self.config["ServerFrequencyInSeconds"])
+      await asyncio.sleep(self.config["ServerFrequencyInSeconds"])
 
       return
 
