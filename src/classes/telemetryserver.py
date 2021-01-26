@@ -46,6 +46,7 @@ class TelemetryServer():
       self.map_telemetry_interfaces_variables = []
 
       # meta
+      self.telemetry_interface = {}
       self.telemetry_payload = {}
 
 
@@ -77,7 +78,14 @@ class TelemetryServer():
           self.telemetry_payload[variable["TelemetryName"]] = value
 
         self.logger.info("[TELEMETRY SERVER LOOP] telemetry_payload : %s" % self.telemetry_payload)
-        pub.sendMessage(telemetry["InterfacelId"], arg1=self.telemetry_payload)
+        self.telemetry_interface["Name"] = telemetry["Name"]
+        self.telemetry_interface["InterfacelId"] = telemetry["InterfacelId"]
+        self.telemetry_interface["InterfaceInstanceName"] = telemetry["InterfaceInstanceName"]
+        self.telemetry_interface["Payload"] = self.telemetry_payload
+
+        self.logger.info("[TELEMETRY SERVER LOOP] telemetry_interface : %s" % self.telemetry_interface)
+        pub.sendMessage(telemetry["InterfacelId"], result=self.telemetry_interface)
+        self.telemetry_interface = {}
         self.telemetry_payload = {}
 
       self.logger.info("[TELEMETRY SERVER LOOP] AWAITING: %s" % self.config["ServerFrequencyInSeconds"])
