@@ -54,42 +54,30 @@ class TelemetryServer():
     #   Function:   run
     #   Usage:      The start function starts the OPC Server
     # -------------------------------------------------------------------------------
-    async def run(self):
+    async def run(self, TelemetryItem):
 
-      # Telemetry Server Run
-      self.logger.info("[TELEMETRY SERVER LOOP] STARTING")
+      for variable in TelemetryItem["Variables"]:
+        self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Display Name): %s" % variable["DisplayName"])
+        self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Telemetry Name): %s" % variable["TelemetryName"])
 
-      for telemetry in self.map_telemetry:
-        self.logger.info("[TELEMETRY SERVER LOOP] NAME: %s" % telemetry["Name"])
-        self.logger.info("[TELEMETRY SERVER LOOP] INTERFACE: %s" % telemetry["InterfacelId"])
+        # Update our iterator and boundaries
+        if int(variable["RangeValueCurrent"]) < int(variable["RangeValueCount"]):
+          variable["RangeValueCurrent"] = int(variable["RangeValueCurrent"]) + 1
+        else:
+          variable["RangeValueCurrent"] = 1
 
-        for variable in telemetry["Variables"]:
-          self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Display Name): %s" % variable["DisplayName"])
-          self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Telemetry Name): %s" % variable["TelemetryName"])
+        value = variable["RangeValues"][int(variable["RangeValueCurrent"]) - 1]
+        self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Value) : %s" % value)
+        self.telemetry_payload[variable["TelemetryName"]] = value
 
-          # Update our iterator and boundaries
-          if int(variable["RangeValueCurrent"]) < int(variable["RangeValueCount"]):
-            variable["RangeValueCurrent"] = int(variable["RangeValueCurrent"]) + 1
-          else:
-            variable["RangeValueCurrent"] = 1
-
-          value = variable["RangeValues"][int(variable["RangeValueCurrent"]) - 1]
-          self.logger.info("[TELEMETRY SERVER LOOP] VARIABLE (Value) : %s" % value)
-          self.telemetry_payload[variable["TelemetryName"]] = value
-
-        self.logger.info("[TELEMETRY SERVER LOOP] telemetry_payload : %s" % self.telemetry_payload)
-        self.telemetry_interface["Name"] = telemetry["Name"]
-        self.telemetry_interface["InterfacelId"] = telemetry["InterfacelId"]
-        self.telemetry_interface["InterfaceInstanceName"] = telemetry["InterfaceInstanceName"]
+        self.telemetry_interface["Name"] = TelemetryItem["Name"]
+        self.telemetry_interface["InterfacelId"] = TelemetryItem["InterfacelId"]
+        self.telemetry_interface["InterfaceInstanceName"] = TelemetryItem["InterfaceInstanceName"]
         self.telemetry_interface["Payload"] = self.telemetry_payload
 
-        self.logger.info("[TELEMETRY SERVER LOOP] telemetry_interface : %s" % self.telemetry_interface)
-        pub.sendMessage("telemetry", result=self.telemetry_interface)
-        self.telemetry_interface = {}
-        self.telemetry_payload = {}
-
-      self.logger.info("[TELEMETRY SERVER LOOP] AWAITING: %s" % self.config["ServerFrequencyInSeconds"])
-      await asyncio.sleep(self.config["ServerFrequencyInSeconds"])
+      pub.sendMessage("telemetry", result=self.telemetry_interface)
+      self.telemetry_interface = {}
+      self.telemetry_payload = {}
 
       return
 
@@ -194,13 +182,12 @@ class TelemetryServer():
       return mapTelemetry
 
     # -------------------------------------------------------------------------------
-    #   Function:   update_map_telemetry
-    #   Usage:      Saves the generated Map Telemetry File
+    #   Function:   get_map_telemetry
+    #   Usage:      Returns the generated Map Telemetry File
     # -------------------------------------------------------------------------------
-    def update_map_telemetry(self):
-      map_telemetry_file = MapTelemetry(self.logger)
-      map_telemetry_file.update_file(self.map_telemetry)
-      return
+    def get_map_telemetry(self):
+      return self.map_telemetry
+
 
 
 

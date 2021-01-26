@@ -2,9 +2,7 @@
   "ServerDiscoveryName": "Smart Monitor for Cold Hub",
   "Description": "Monitoring of Cold Hub",
   "ApplicationUri": "urn:LarouexSmartKitchen:Server",
-  "ServerFrequencyInSeconds": 1,
-  "TelemetryFrequencyInSeconds": 5,
-  "ReadTimeBetweenTemperatureInSeconds": 2,
+  "ServerFrequencyInSeconds": 5,
   "TemperatureFormat": "F",
   "NameSpace": "ColdHub1",
   "Status": {

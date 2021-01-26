@@ -46,6 +46,11 @@ class DeviceFleet():
       self.load_config()
       self.payload = {}
 
+      # Telemetry Mapping
+      self.map_telemetry = []
+
+      # Subscriber to all messages from
+      # Telemetry Server Publication messages
       self.listener = Listener()
 
     # -------------------------------------------------------------------------------
@@ -54,18 +59,29 @@ class DeviceFleet():
     # -------------------------------------------------------------------------------
     async def run(self, TelemetryServer):
 
-      self.logger.info("[DEVICE FLEET] Starting Telemetry Server...")
+      self.logger.info("[DEVICEFLEET] Starting...")
 
+      # Subscribe to the Telemetry Server Publication of Telemetry Data
       pub.subscribe(self.listener, pub.ALL_TOPICS)
+
+      # Grab the Telemetry Enumeration (populated in TelemetryServer.setup())
+      self.map_telemetry = TelemetryServer.get_map_telemetry()
 
       while True:
 
-        await TelemetryServer.run()
-        self.payload = self.listener.read_payload()
-        map_telemetry_interfaces = TelemetryServer.create_map_telemetry_root(self.payload["Name"], self.payload["InterfacelId"], self.payload["InterfaceInstanceName"])
-        map_telemetry_interfaces["Variables"] = self.payload["Payload"]
-        self.logger.info("DeviceFleet: map_telemetry_interfaces: %s" % map_telemetry_interfaces)
-        print("larouex larouex larouex")
+        for telemetry in self.map_telemetry:
+          self.logger.info("[DEVICEFLEET LOOP] NAME: %s" % telemetry["Name"])
+          self.logger.info("[DEVICEFLEET LOOP] INTERFACE: %s" % telemetry["InterfacelId"])
+
+          await TelemetryServer.run(telemetry)
+
+          self.payload = self.listener.read_payload()
+          map_telemetry_interfaces = TelemetryServer.create_map_telemetry_root(self.payload["Name"], self.payload["InterfacelId"], self.payload["InterfaceInstanceName"])
+          map_telemetry_interfaces["Variables"] = self.payload["Payload"]
+          self.logger.info("[DEVICEFLEET LOOP] PUBLISHED: %s" % map_telemetry_interfaces)
+
+        self.logger.info("[DEVICEFLEET LOOP] WAITING: %s" % self.config["ServerFrequencyInSeconds"])
+        await asyncio.sleep(self.config["ServerFrequencyInSeconds"])
 
 
       return
