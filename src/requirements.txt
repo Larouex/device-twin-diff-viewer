@@ -6,6 +6,7 @@ wheel
 setuptools
 virtualenv
 asyncio
+hmac
 cryptography
 argparse
 pypubsub

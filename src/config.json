@@ -13,11 +13,11 @@
     }
   },
   "Device":{
-    "DeviceNamePrefix": "cold-hub-{id}",
-    "NameSpace": "coldHubStorage",
-    "DeviceCapabilityModelId": "dtmi:coldHubStorage:mainComponent;1"
+    "DeviceNamePrefix": "smart-kitchen-{id}",
+    "NameSpace": "larouexSmartKitchen2049",
+    "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1"
   },
-  "TelemetryRings": ["ClientUrlPattern",
+  "TelemetryRings": [
     {"Ring0": 15},
     {"Ring1": 20},
     {"Ring2": 25},

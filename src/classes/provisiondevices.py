@@ -50,7 +50,7 @@ class ProvisionDevices():
       self.application_uri = None
       self.namespace = None
       self.device_name = None
-      self.device_capability_model_id = None
+      self.device_default_component_id = None
       self.device_capability_model = []
       self.device_name_prefix = None
       self.ignore_interface_ids = []
@@ -72,17 +72,17 @@ class ProvisionDevices():
       # First up we gather all of the needed provisioning meta-data and secrets
       try:
 
-        self.namespace = self.config["Model"]["NameSpace"]
-        self.device_capability_model_id = self.config["Model"]["DeviceCapabilityModelId"]
+        self.namespace = self.config["Device"]["NameSpace"]
+        self.device_default_component_id = self.config["Device"]["DefaultComponentId"]
         self.device_name_prefix = self.config["Device"]["DeviceNamePrefix"]
 
         # this is our working cache for things we provision in this session
         self.device_to_provision = self.create_device_to_provision()
         self.device_create()
 
-        print("********************************")
+        print("************************************************")
         print("DEVICE TO PROVISION: %s" % self.device_to_provision)
-        print("********************************")
+        print("************************************************")
 
         # Azure IoT Central SDK Call to create the provisioning_device_client
         provisioning_device_client = ProvisioningDeviceClient.create_from_symmetric_key(
@@ -94,24 +94,24 @@ class ProvisionDevices():
         )
 
         # Azure IoT Central SDK call to set the DCM payload and provision the device
-        provisioning_device_client.provisioning_payload = '{"iotcModelId":"%s"}' % (self.device_to_provision["Device"]["DeviceCapabilityModelId"])
+        provisioning_device_client.provisioning_payload = '{"iotcModelId":"%s"}' % (self.device_to_provision["Device"]["DefaultComponentId"])
         registration_result = await provisioning_device_client.register()
         self.logger.info("[REGISTRATION RESULT] %s" % registration_result)
-        self.logger.info("[DeviceSymmetricKey] %s" % self.device_to_provision["Device"]["Secrets"]["DeviceSymmetricKey"])
+        self.logger.info("[DEVICE SYMMETRIC KEY] %s" % self.device_to_provision["Device"]["Secrets"]["DeviceSymmetricKey"])
         self.device_to_provision["Device"]["Secrets"]["AssignedHub"] = registration_result.registration_state.assigned_hub
         self.devices_cache.update_file(self.device_to_provision)
         self.secrets.update_file_device_secrets(self.device_to_provision)
-        
 
-        print("********************************")
+
+        print("************************************************")
         print("DEVICE SUCCESSFULLY PROVISIONED: %s" % self.device_to_provision)
-        print("********************************")
+        print("************************************************")
 
         return
 
       except Exception as ex:
         self.logger.error("[ERROR] %s" % ex)
-        self.logger.error("[TERMINATING] We encountered an error in CLASS::ProvisionDevice::provision_device()" )
+        self.logger.error("[TERMINATING] We encountered an error in provision_devices()" )
 
     # -------------------------------------------------------------------------------
     #   Function:   load_config
@@ -130,19 +130,18 @@ class ProvisionDevices():
     def device_create(self):
 
       try:
-        
+
         self.device_name = self.device_name_prefix.format(id=self.id_device)
-        self.device_capability_model_id = self.config["Model"]["DeviceCapabilityModelId"]
+        self.device_default_component_id = self.config["Device"]["DefaultComponentId"]
         self.device_to_provision["Device"] = self.create_device_capability_model()
         self.device_to_provision["Device"]["Secrets"] = self.create_device_connection()
-        print("here")
-        print(self.device_to_provision)
+        self.logger.error("[PROVISION DEVICES] Device to Provision %s" % self.device_to_provision)
+
+        return
 
       except Exception as ex:
         self.logger.error("[ERROR] %s" % ex)
-        self.logger.error("[TERMINATING] We encountered an error in CLASS::ProvisionDevices::devices_create()" )
-
-        return
+        self.logger.error("[TERMINATING] We encountered an error in devices_create()" )
 
     # -------------------------------------------------------------------------------
     #   Function:   create_device_to_provision`
@@ -164,7 +163,7 @@ class ProvisionDevices():
     def create_device_capability_model(self):
       newDeviceCapabilityModel = {
         "Name": self.device_name,
-        "DeviceCapabilityModelId": self.device_capability_model_id,
+        "DefaultComponentId": self.device_default_component_id,
         "Capabilities": [
         ],
         "LastProvisioned": str(datetime.datetime.now())
@@ -194,7 +193,7 @@ class ProvisionDevices():
 
       newDeviceSecret = {
         "Name": self.device_name,
-        "DeviceCapabilityModelId": self.device_capability_model_id,
+        "DefaultComponentId": self.device_default_component_id,
         "AssignedHub": "",
         "DeviceSymmetricKey": device_symmetric_key,
         "LastProvisioned": str(datetime.datetime.now())

@@ -12,7 +12,7 @@ import  getopt, sys, time, string, threading, asyncio, os
 import logging as Log
 
 # our classes
-from classes.provisiondevice import ProvisionDevice
+from classes.provisiondevices import ProvisionDevices
 from classes.config import Config
 
 # -------------------------------------------------------------------------------
@@ -80,7 +80,7 @@ async def main(argv):
           print("[ERROR] -r --registerid must be a numeric value")
           return
 
-    await provision_device(id)
+    await provision_devices(id)
 
 if __name__ == "__main__":
     asyncio.run(main(sys.argv[1:]))
