@@ -1,6 +1,10 @@
-# Azure IoT Central Device Twin Scneario Viewer
-ColdHubs, is a “plug and play” modular, solar-powered walk-in cold room, for 24/7 off-grid storage and preservation of perishable foods. It adequately addresses the problem of post- harvest losses in fruits, vegetables and other perishable food. ColdHubs, is installed in major food production and consumption centers (in markets and farms), farmers place their produce in clean plastic crates, these plastic crates are stacked inside the cold room. This extends the freshness of fruits, vegetables and other perishable food from 2 days to about 21 days. The solar powered walk-in cold room is made of 120mm insulating cold room panels to retain cold. Energy from solar panels mounted on the roof-top of the cold room are stored in high capacity batteries, these batteries feeds an inverter which in turn feeds the refrigerating unit.
+# Azure IoT Central Device Twin Scenario Viewer
+The Device Twin Scenario Viewer is a standalone project that is designed assist device developers and testers who are using the forms and update mechanisms in Azure IoT Central. The project provides...
 
+* <b>Pub/Sub Telemetry Server</b> - Configuration of the components, interfaces and variables for generating telemetry that can be subscribed by your device fleet.
+* <b>Device Fleet Provisioning</b> - Configuration of the devices and models to provision into you Azure IoT Central application.
+* <b>Device Fleet Simulation</b> - Configuration of simulation of the devices and subscribing to the Telemetry Server to send Telemetry and firmware simulation for handlign changes to the properties (Twins) and code for handling state changes from property setting, etc.
+* <b>Twin History and Diff Viewer</b> - Dashboard viewer that provides a historical view and comparison diff for Twin changes (Desired and Reported)
 ## Contents
 * [Bill of Materials for Cold Hub Monitoring](#bill-of-materials-for-cold-hub-monitoring)
 * [Assembling the Raspberry Pi and the Components](#assembling-the-raspberry-pi-and-the-components)
