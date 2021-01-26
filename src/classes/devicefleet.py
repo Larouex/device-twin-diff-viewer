@@ -19,10 +19,21 @@ from classes.config import Config
 from classes.devicescache import DevicesCache
 from classes.maptelemetry import MapTelemetry
 
+global Name
+global InterfacelId
+global InterfaceInstanceName
+global Payload
 class Listener:
 
+    def __init__(self):
+      self.payload = None
+
     def __call__(self, **kwargs):
-        print('Listener instance received: ', kwargs)
+      # read and parse the payload
+      self.payload =  kwargs["result"]
+
+    def read_payload(self):
+      return self.payload
 
 class DeviceFleet():
 
@@ -33,6 +44,7 @@ class DeviceFleet():
       # Load configuration
       self.config = []
       self.load_config()
+      self.payload = {}
 
       self.listener = Listener()
 
@@ -49,6 +61,11 @@ class DeviceFleet():
       while True:
 
         await TelemetryServer.run()
+        self.payload = self.listener.read_payload()
+        map_telemetry_interfaces = TelemetryServer.create_map_telemetry_root(self.payload["Name"], self.payload["InterfacelId"], self.payload["InterfaceInstanceName"])
+        map_telemetry_interfaces["Variables"] = self.payload["Payload"]
+        self.logger.info("DeviceFleet: map_telemetry_interfaces: %s" % map_telemetry_interfaces)
+        print("larouex larouex larouex")
 
 
       return

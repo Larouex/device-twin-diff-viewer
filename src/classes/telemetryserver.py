@@ -84,7 +84,7 @@ class TelemetryServer():
         self.telemetry_interface["Payload"] = self.telemetry_payload
 
         self.logger.info("[TELEMETRY SERVER LOOP] telemetry_interface : %s" % self.telemetry_interface)
-        pub.sendMessage(telemetry["InterfacelId"], result=self.telemetry_interface)
+        pub.sendMessage("telemetry", result=self.telemetry_interface)
         self.telemetry_interface = {}
         self.telemetry_payload = {}
 
@@ -174,36 +174,6 @@ class TelemetryServer():
       }
       return mapTelemetry
 
-    # -------------------------------------------------------------------------------
-    #   Function:   create_map_telemetry_device
-    #   Usage:      Adds a device to the map telemetry configuration file
-    # -------------------------------------------------------------------------------
-    def create_map_telemetry_device(self, Name, OpcUaNodeId, DeviceType, DeviceCapabilityModelId):
-      mapTelemetry = {
-        "Name": Name,
-        "Connected": False,
-        "ConnectedDateTime": "",
-        "NodeId": OpcUaNodeId,
-        "DeviceType": DeviceType,
-        "DeviceCapabilityModelId": DeviceCapabilityModelId,
-        "Interfaces": [
-        ]
-      }
-      return mapTelemetry
-
-    # -------------------------------------------------------------------------------
-    #   Function:   create_map_telemetry_interface
-    #   Usage:      Sets the node for the Map Telemetry configuration file
-    # -------------------------------------------------------------------------------
-    def create_map_telemetry_interface(self, Name, InterfacelId, InterfaceInstanceName):
-      mapTelemetry = {
-        "Name": Name,
-        "InterfacelId": InterfacelId,
-        "InterfaceInstanceName": InterfaceInstanceName,
-        "Variables":[
-        ]
-      }
-      return mapTelemetry
 
     # -------------------------------------------------------------------------------
     #   Function:   create_map_telemetry_variable
