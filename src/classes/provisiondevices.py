@@ -36,8 +36,8 @@ class ProvisionDevices():
       self.id_device = Id
 
       # Load the configuration file
-      self.config = {}
-      self.load_config()
+      self.config = Config(self.logger)
+      self.config = self.config.data
 
       # Symmetric Key
       self.symmetrickey = SymmetricKey(self.logger)
@@ -58,7 +58,8 @@ class ProvisionDevices():
       # Devices Cache
       self.devices_cache = DevicesCache(self.logger)
       self.devices_cache_data = self.devices_cache.data
-      self.device_to_provision = []
+      self.device_to_provision = None
+      self.device_to_provision_array = []
 
 
     # -------------------------------------------------------------------------------
@@ -99,9 +100,55 @@ class ProvisionDevices():
         self.logger.info("[REGISTRATION RESULT] %s" % registration_result)
         self.logger.info("[DEVICE SYMMETRIC KEY] %s" % self.device_to_provision["Device"]["Secrets"]["DeviceSymmetricKey"])
         self.device_to_provision["Device"]["Secrets"]["AssignedHub"] = registration_result.registration_state.assigned_hub
-        self.devices_cache.update_file(self.device_to_provision)
-        self.secrets.update_file_device_secrets(self.device_to_provision)
 
+        # Add Capabilities
+        for node in self.config["Nodes"]:
+          self.device_to_provision["Device"]["Capabilities"].append(node["InterfaceInstanceName"])
+
+        # Now create/update our devices cache
+        secrets_found_device = False
+        devices_found_device = False
+
+        if len(self.devices_cache_data["Devices"]) > 0:
+
+          index = 0
+          # Update Secrets Cache Data for Devices
+          for device in self.secrets_cache_data["Devices"]:
+            if device["Device"]["Name"] == self.device_to_provision["Device"]["Name"]:
+              self.secrets_cache_data["Devices"][index] = self.device_to_provision
+              secrets_found_device = True
+              break
+            else:
+              index = index + 1
+
+          index = 0
+          # if we fell thru, add it
+          if secrets_found_device == False:
+            self.secrets_cache_data["Devices"].append(self.device_to_provision)
+
+          for device in self.devices_cache_data["Devices"]:
+            if device["Device"]["Name"] == self.device_to_provision["Device"]["Name"]:
+              self.devices_cache_data["Devices"][index] = self.device_to_provision
+              devices_found_device = True
+              break
+            else:
+              index = index + 1
+
+          # if we fell thru, add it
+          if devices_found_device == False:
+            self.devices_cache_data["Devices"].append(self.device_to_provision)
+
+        # Update Full Device Information to the Secrets file.
+        # IMPORTANT: This hides the secrets in file in .gitignore
+        self.secrets.update_file_device_secrets(self.secrets_cache_data["Devices"])
+
+        # Save to the Device Cache and null the secrets
+        index = 0
+        for device in self.devices_cache_data["Devices"]:
+          self.devices_cache_data["Devices"][index]["Device"]["Secrets"] = None
+          index = index + 1
+
+        self.devices_cache.update_file(self.devices_cache_data)
 
         print("************************************************")
         print("DEVICE SUCCESSFULLY PROVISIONED: %s" % self.device_to_provision)
@@ -112,16 +159,6 @@ class ProvisionDevices():
       except Exception as ex:
         self.logger.error("[ERROR] %s" % ex)
         self.logger.error("[TERMINATING] We encountered an error in provision_devices()" )
-
-    # -------------------------------------------------------------------------------
-    #   Function:   load_config
-    #   Usage:      Loads the configuration
-    # -------------------------------------------------------------------------------
-    def load_config(self):
-
-      config = Config(self.logger)
-      self.config = config.data
-      return
 
     # -------------------------------------------------------------------------------
     #   Function:   device_create
@@ -148,13 +185,13 @@ class ProvisionDevices():
     #   Usage:      Returns a Devices Array
     # -------------------------------------------------------------------------------
     def create_device_to_provision(self):
-      newDeviceToProvisionArray = {
+      newDeviceToProvision = {
         "Device": {
           "Secrets": {
           }
         }
       }
-      return newDeviceToProvisionArray
+      return newDeviceToProvision
 
     # -------------------------------------------------------------------------------
     #   Function:   create_device_capability_model

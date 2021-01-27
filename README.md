@@ -10,4 +10,6 @@ The Device Twin Scenario Viewer is a standalone project that is designed assist 
 * [Requirements for this Project](#)
 
 ## Requirements for this Project
-The following are needed for this project...
+The requirements and preparations are assumed for this project...
+
+* You have an Azure Account
