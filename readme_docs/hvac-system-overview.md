@@ -1,5 +1,5 @@
 # Kitchen HVAC System - Smart Kitchen OPC-UA Integration with Azure IoT Central
-![alt text](./Assets/commercial-hvac-header.png "Kitchen HVAC System")
+![alt text](../Assets/commercial-hvac-header.png "Kitchen HVAC System")
 
 This is a detailed overview of the following...
 
