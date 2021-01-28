@@ -15,7 +15,7 @@
           "ColdTableInterface",
           "DishwasherInterface"
         ],
-        "LastProvisioned": "2021-01-26 19:08:58.515789",
+        "LastProvisioned": "2021-01-28 09:49:37.888877",
         "Secrets": null
       }
     },
@@ -34,7 +34,178 @@
           "ColdTableInterface",
           "DishwasherInterface"
         ],
-        "LastProvisioned": "2021-01-26 19:16:34.875942",
+        "LastProvisioned": "2021-01-28 10:07:21.666899",
+        "Secrets": null
+      }
+    },
+    {
+      "Device": {
+        "Name": "smart-kitchen-3",
+        "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+        "Capabilities": [
+          "AmbientInterface",
+          "HVACInterface",
+          "WalkinFridgeInterface",
+          "WalkinFreezerInterface",
+          "FryerInterface",
+          "StandingFridgeInterface",
+          "StandingFreezerInterface",
+          "ColdTableInterface",
+          "DishwasherInterface"
+        ],
+        "LastProvisioned": "2021-01-28 10:07:34.692366",
+        "Secrets": null
+      }
+    },
+    {
+      "Device": {
+        "Name": "smart-kitchen-4",
+        "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+        "Capabilities": [
+          "AmbientInterface",
+          "HVACInterface",
+          "WalkinFridgeInterface",
+          "WalkinFreezerInterface",
+          "FryerInterface",
+          "StandingFridgeInterface",
+          "StandingFreezerInterface",
+          "ColdTableInterface",
+          "DishwasherInterface"
+        ],
+        "LastProvisioned": "2021-01-28 10:07:47.473670",
+        "Secrets": null
+      }
+    },
+    {
+      "Device": {
+        "Name": "smart-kitchen-5",
+        "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+        "Capabilities": [
+          "AmbientInterface",
+          "HVACInterface",
+          "WalkinFridgeInterface",
+          "WalkinFreezerInterface",
+          "FryerInterface",
+          "StandingFridgeInterface",
+          "StandingFreezerInterface",
+          "ColdTableInterface",
+          "DishwasherInterface"
+        ],
+        "LastProvisioned": "2021-01-28 10:08:00.527761",
+        "Secrets": null
+      }
+    },
+    {
+      "Device": {
+        "Name": "smart-kitchen-6",
+        "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+        "Capabilities": [
+          "AmbientInterface",
+          "HVACInterface",
+          "WalkinFridgeInterface",
+          "WalkinFreezerInterface",
+          "FryerInterface",
+          "StandingFridgeInterface",
+          "StandingFreezerInterface",
+          "ColdTableInterface",
+          "DishwasherInterface"
+        ],
+        "LastProvisioned": "2021-01-28 10:08:13.993760",
+        "Secrets": null
+      }
+    },
+    {
+      "Device": {
+        "Name": "smart-kitchen-7",
+        "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+        "Capabilities": [
+          "AmbientInterface",
+          "HVACInterface",
+          "WalkinFridgeInterface",
+          "WalkinFreezerInterface",
+          "FryerInterface",
+          "StandingFridgeInterface",
+          "StandingFreezerInterface",
+          "ColdTableInterface",
+          "DishwasherInterface"
+        ],
+        "LastProvisioned": "2021-01-28 10:08:26.543760",
+        "Secrets": null
+      }
+    },
+    {
+      "Device": {
+        "Name": "smart-kitchen-8",
+        "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+        "Capabilities": [
+          "AmbientInterface",
+          "HVACInterface",
+          "WalkinFridgeInterface",
+          "WalkinFreezerInterface",
+          "FryerInterface",
+          "StandingFridgeInterface",
+          "StandingFreezerInterface",
+          "ColdTableInterface",
+          "DishwasherInterface"
+        ],
+        "LastProvisioned": "2021-01-28 10:08:39.210760",
+        "Secrets": null
+      }
+    },
+    {
+      "Device": {
+        "Name": "smart-kitchen-9",
+        "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+        "Capabilities": [
+          "AmbientInterface",
+          "HVACInterface",
+          "WalkinFridgeInterface",
+          "WalkinFreezerInterface",
+          "FryerInterface",
+          "StandingFridgeInterface",
+          "StandingFreezerInterface",
+          "ColdTableInterface",
+          "DishwasherInterface"
+        ],
+        "LastProvisioned": "2021-01-28 10:08:51.820760",
+        "Secrets": null
+      }
+    },
+    {
+      "Device": {
+        "Name": "smart-kitchen-10",
+        "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+        "Capabilities": [
+          "AmbientInterface",
+          "HVACInterface",
+          "WalkinFridgeInterface",
+          "WalkinFreezerInterface",
+          "FryerInterface",
+          "StandingFridgeInterface",
+          "StandingFreezerInterface",
+          "ColdTableInterface",
+          "DishwasherInterface"
+        ],
+        "LastProvisioned": "2021-01-28 10:09:04.335760",
+        "Secrets": null
+      }
+    },
+    {
+      "Device": {
+        "Name": "smart-kitchen-11",
+        "DefaultComponentId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen;1",
+        "Capabilities": [
+          "AmbientInterface",
+          "HVACInterface",
+          "WalkinFridgeInterface",
+          "WalkinFreezerInterface",
+          "FryerInterface",
+          "StandingFridgeInterface",
+          "StandingFreezerInterface",
+          "ColdTableInterface",
+          "DishwasherInterface"
+        ],
+        "LastProvisioned": "2021-01-28 10:09:16.821760",
         "Secrets": null
       }
     }

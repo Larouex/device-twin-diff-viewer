@@ -18,19 +18,27 @@ from classes.config import Config
 # -------------------------------------------------------------------------------
 #   Provision Device
 # -------------------------------------------------------------------------------
-async def provision_devices(Id):
+async def provision_devices(Id, NumberOfDevices):
 
-  provisiondevices = ProvisionDevices(Log, Id)
-  await provisiondevices.provision_devices()
+  provisiondevices = ProvisionDevices(Log)
+  id = int(Id)
+  number_of_devices = int(NumberOfDevices)
+  if (number_of_devices == 1):
+    await provisiondevices.provision_devices(id)
+  else:
+    for i in range(number_of_devices):
+      await provisiondevices.provision_devices(id + i)
   return True
 
 async def main(argv):
 
-    # execution state from args
+    # defaults
     id = 1
+    number_of_devices = 1
 
-    short_options = "hvdr:"
-    long_options = ["help", "verbose", "debug", "registerid="]
+    # execution state from args
+    short_options = "hvdr:n:"
+    long_options = ["help", "verbose", "debug", "registerid=", "numberofdevices="]
     full_cmd_arguments = sys.argv
     argument_list = full_cmd_arguments[1:]
     try:
@@ -52,10 +60,17 @@ async def main(argv):
         print("")
         print("  OPTIONAL PARAMETERS...")
         print("")
-        print("    -r or --registerid - This numeric value will get appended to your provisioned device. Example '1' would result in larouex-smart-kitchen-1")
+        print("    -r or --registerid - This numeric value will get appended to your provisioned device. Example '1' would")
+        print("                         result in a device provisioned with the name: 'smart-kitchen-1'")
         print("       USAGE: -r 5")
         print("       DEFAULT: 1")
         print("")
+        print("    -n or --numberofdevices - The value is used to enumerate and provision the device(s) count specified.")
+        print("                              NOTE: LIMIT OF 10 DEVICES PER SESSION. You can run the provisiondevices.py via")
+        print("                              a script and indicate --registerid with the sequential numbering if you want to")
+        print("                              provision more devices.")
+        print("       USAGE: -n 10")
+        print("       DEFAULT: 1")
         print("------------------------------------------------------------------------------------------------------------------------------------------")
         return
 
@@ -80,7 +95,23 @@ async def main(argv):
           print("[ERROR] -r --registerid must be a numeric value")
           return
 
-    await provision_devices(id)
+      if current_argument in ("-n", "--numberofdevices"):
+        number_of_devices = current_value
+        Log.info("Number of Devices is Specified as: {numberofdevices}".format(numberofdevices = number_of_devices))
+
+        # validate the number is a NUMBER
+        if (isinstance(number_of_devices, str) and not number_of_devices.isnumeric()):
+          print("[ERROR] -n --numberofdevices must be a numeric value between 1 and 10")
+          return
+        elif isinstance(number_of_devices, str):
+          number_of_devices = int(number_of_devices)
+
+        # validate the number is contrained to our boundary
+        if (number_of_devices > 10):
+          print("[ERROR] -n --numberofdevices must be a numeric value between 1 and 10")
+          return
+
+    await provision_devices(id, number_of_devices)
 
 if __name__ == "__main__":
     asyncio.run(main(sys.argv[1:]))

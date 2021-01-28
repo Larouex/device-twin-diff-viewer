@@ -30,10 +30,11 @@ class ProvisionDevices():
     timer_ran = False
     dcm_value = None
 
-    def __init__(self, Log, Id):
+    def __init__(self, Log):
 
+      # Initialization
       self.logger = Log
-      self.id_device = Id
+      self.id_device = None
 
       # Load the configuration file
       self.config = Config(self.logger)
@@ -68,10 +69,12 @@ class ProvisionDevices():
     #               a provisioning call to associated a device template to the node
     #               interface based on the twin, device or gateway pattern
     # -------------------------------------------------------------------------------
-    async def provision_devices(self):
+    async def provision_devices(self, Id):
 
       # First up we gather all of the needed provisioning meta-data and secrets
       try:
+
+        self.id_device = Id
 
         self.namespace = self.config["Device"]["NameSpace"]
         self.device_default_component_id = self.config["Device"]["DefaultComponentId"]
