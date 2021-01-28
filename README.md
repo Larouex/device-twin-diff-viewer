@@ -13,9 +13,10 @@ The capabilities of this project are defined by the various project lifecycle th
 * <b>Device Fleet Simulation</b> - Configuration of simulation of the devices and subscribing to the Telemetry Server to send real-world telemetry values and firmware simulation for handling changes to the properties (Twins) and code for handling state changes from property setting, etc.
 * <b>Twin History and Diff Viewer</b> - Dashboard viewer that provides a historical view and comparison diff for Twin changes (Desired and Reported)
 ## Contents
-* [Intended Audience for this Project?](#requirements-for-this-project)
+* [Intended Audience for this Project?](#intended-audience-for-this-project)
 * [Requirements for this Project](#requirements-for-this-project)
-* [Intended Audience for this Project?](#)
+* [The Smart Kitchen Overview](#the-smart-kitchen-overview)
+  * [HVAC](#hvac)
 ## Intended Audience for this Project?
 * System Integrators
 * Developers
@@ -27,11 +28,10 @@ The requirements and preparations are assumed for this project...
 
 ## The Smart Kitchen Overview
 The core of this demo application for Azure IoT Central is the emulation of IoT in the context of a commercial kitchen. We have included the following emulated appliance models that you would find in a commercial kitchen...
+### HVAC
+![alt text](./Assets/commercial-hvac-header.png "HVAC System")
 
-## HVAC
-![alt text](./Assets/commercial-hvac-header.png "Kitchen HVAC System")
-
-[LINK: Detailed Overview for the Kitchen HVAC System](./KitchenHVACSystemOverview.md)
+[LINK: Detailed Overview for the Kitchen HVAC System](./hvac-system-overview.md)
 
     Measurements
     ---------------------------------
@@ -45,10 +45,10 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
     * Main Motor RPM > Trend
     * CFM > Trend
 
-## Walk In Freezer
-![alt text](./Assets/commercial-walkin-freezer-header.png "Walk In Freezer") 
+### Walk In Freezer
+![alt text](./Assets/commercial-walkin-freezer-header.png "Walk In Freezer")
 
-[LINK: Detailed Overview for the Walk In Freezer](./WalkInFreezerOverview.md)
+[LINK: Detailed Overview for the Walk In Freezer](./walkin-freezer-overview.md)
 
     Measurements
     ---------------------------------
@@ -66,10 +66,10 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
     Door Ajar is a Trend
     Compressor Health > 98
 
-## Walk In Refrigerator
+### Walk In Refrigerator
 ![alt text](./Assets/commercial-walkin-fridge-header.png "Walk In Refrigerator") 
 
-[LINK: Detailed Overview for the Walk In Refrigerator](./WalkInRefrigeratorOverview.md)
+[LINK: Detailed Overview for the Walk In Refrigerator](./walkin-refrigerator-overview.md)
 
     Measurements
     ---------------------------------
@@ -87,10 +87,10 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
     Door Ajar is a Trend
     Compressor Health > 98
 
-## Standing Freezer
+### Standing Freezer
 ![alt text](./Assets/commercial-standing-freezer-header.png "Standing Freezer")
 
-[LINK: Detailed Overview for the Standing Freezer](./StandingFreezerOverview.md)
+[LINK: Detailed Overview for the Standing Freezer](./standing-freezer-overview.md)
 
     Measurements
     ---------------------------------
@@ -108,10 +108,10 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
     Door Ajar is a Trend
     Compressor Health > 98
 
-## Standing Refrigerator
+### Standing Refrigerator
 ![alt text](./Assets/commercial-standing-fridge-header.png "Standing Refrigerator")
 
-[LINK: Detailed Overview for the Standing Refrigerator](./StandingRefrigeratorOverview.md)
+[LINK: Detailed Overview for the Standing Refrigerator](./standing-refrigerator-overview.md)
 
     Measurements
     ---------------------------------
@@ -129,10 +129,10 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
     Door Ajar is a Trend
     Compressor Health > 98
 
-## Fryer
+### Fryer
 ![alt text](./Assets/commercial-fryer-header.png "Fryer")
 
-[LINK: Detailed Overview for the Fryer](./FryerOverview.md)
+[LINK: Detailed Overview for the Fryer](./fryer-overview.md)
 
     Measurements
     ---------------------------------
@@ -146,10 +146,10 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
       Oil Quality > 75
       Fryer Heater Health > 98
 
-## Cold Table
+### Cold Table
 ![alt text](./Assets/commercial-cold-table.png "Cold Table")
 
-[LINK: Detailed Overview for the Cold Table](./FryerOverview.md)
+[LINK: Detailed Overview for the Cold Table](./cold-table-overview.md)
 
     Measurements
     ---------------------------------
@@ -161,10 +161,10 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
       Ideal Temperature = 39 F
       Compressor Health > 98
 
-## Dishwasher
+### Dishwasher
 ![alt text](./Assets/commercial-dishwasher.png "Dishwasher")
 
-[LINK: Detailed Overview for the Dishwasher](./DishwasherOverview.md)
+[LINK: Detailed Overview for the Dishwasher](./dishwasher-overview.md)
 
     Measurements
     ---------------------------------
