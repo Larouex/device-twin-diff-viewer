@@ -13,10 +13,21 @@ The capabilities of this project are defined by the various project lifecycle th
 * <b>Device Fleet Simulation</b> - Configuration of simulation of the devices and subscribing to the Telemetry Server to send real-world telemetry values and firmware simulation for handling changes to the properties (Twins) and code for handling state changes from property setting, etc.
 * <b>Twin History and Diff Viewer</b> - Dashboard viewer that provides a historical view and comparison diff for Twin changes (Desired and Reported)
 ## Contents
-* [Intended Audience for this Project?](#intended-audience-for-this-project)
-* [Requirements for this Project](#requirements-for-this-project)
-* [The Smart Kitchen Overview](#the-smart-kitchen-overview)
-  * [HVAC](#hvac)
+- [Azure IoT Central Device Twin Scenario Viewer](#azure-iot-central-device-twin-scenario-viewer)
+  - [Project Overview](#project-overview)
+  - [Project Capabilities](#project-capabilities)
+  - [Contents](#contents)
+  - [Intended Audience for this Project?](#intended-audience-for-this-project)
+  - [Requirements for this Project](#requirements-for-this-project)
+  - [The Smart Kitchen Overview](#the-smart-kitchen-overview)
+    - [HVAC](#hvac)
+    - [Walk In Freezer](#walk-in-freezer)
+    - [Walk In Refrigerator](#walk-in-refrigerator)
+    - [Standing Freezer](#standing-freezer)
+    - [Standing Refrigerator](#standing-refrigerator)
+    - [Fryer](#fryer)
+    - [Cold Table](#cold-table)
+    - [Dishwasher](#dishwasher)
 ## Intended Audience for this Project?
 * System Integrators
 * Developers
