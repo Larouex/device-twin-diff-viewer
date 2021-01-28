@@ -42,7 +42,7 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
 ### HVAC
 ![alt text](./Assets/commercial-hvac-header.png "HVAC System")
 
-[LINK: Detailed Overview for the Kitchen HVAC System](./hvac-system-overview.md)
+[LINK: Detailed Overview for the Kitchen HVAC System](./readme_docs/hvac-system-overview.md)
 
     Measurements
     ---------------------------------
@@ -59,7 +59,7 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
 ### Walk In Freezer
 ![alt text](./Assets/commercial-walkin-freezer-header.png "Walk In Freezer")
 
-[LINK: Detailed Overview for the Walk In Freezer](./walkin-freezer-overview.md)
+[LINK: Detailed Overview for the Walk In Freezer](./readme_docs/walkin-freezer-overview.md)
 
     Measurements
     ---------------------------------
@@ -80,7 +80,7 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
 ### Walk In Refrigerator
 ![alt text](./Assets/commercial-walkin-fridge-header.png "Walk In Refrigerator") 
 
-[LINK: Detailed Overview for the Walk In Refrigerator](./walkin-refrigerator-overview.md)
+[LINK: Detailed Overview for the Walk In Refrigerator](./readme_docs/walkin-refrigerator-overview.md)
 
     Measurements
     ---------------------------------
@@ -101,7 +101,7 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
 ### Standing Freezer
 ![alt text](./Assets/commercial-standing-freezer-header.png "Standing Freezer")
 
-[LINK: Detailed Overview for the Standing Freezer](./standing-freezer-overview.md)
+[LINK: Detailed Overview for the Standing Freezer](./readme_docs/standing-freezer-overview.md)
 
     Measurements
     ---------------------------------
@@ -122,7 +122,7 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
 ### Standing Refrigerator
 ![alt text](./Assets/commercial-standing-fridge-header.png "Standing Refrigerator")
 
-[LINK: Detailed Overview for the Standing Refrigerator](./standing-refrigerator-overview.md)
+[LINK: Detailed Overview for the Standing Refrigerator](./readme_docs/standing-refrigerator-overview.md)
 
     Measurements
     ---------------------------------
@@ -143,7 +143,7 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
 ### Fryer
 ![alt text](./Assets/commercial-fryer-header.png "Fryer")
 
-[LINK: Detailed Overview for the Fryer](./fryer-overview.md)
+[LINK: Detailed Overview for the Fryer](./readme_docs/fryer-overview.md)
 
     Measurements
     ---------------------------------
@@ -160,7 +160,7 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
 ### Cold Table
 ![alt text](./Assets/commercial-cold-table.png "Cold Table")
 
-[LINK: Detailed Overview for the Cold Table](./cold-table-overview.md)
+[LINK: Detailed Overview for the Cold Table](./readme_docs/cold-table-overview.md)
 
     Measurements
     ---------------------------------
@@ -175,7 +175,7 @@ The core of this demo application for Azure IoT Central is the emulation of IoT 
 ### Dishwasher
 ![alt text](./Assets/commercial-dishwasher.png "Dishwasher")
 
-[LINK: Detailed Overview for the Dishwasher](./dishwasher-overview.md)
+[LINK: Detailed Overview for the Dishwasher](./readme_docs/dishwasher-overview.md)
 
     Measurements
     ---------------------------------
