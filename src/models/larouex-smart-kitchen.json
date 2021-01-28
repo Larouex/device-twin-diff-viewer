@@ -172,7 +172,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:hvac_cfm_airflow;1",
+        "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:hvac_cfm_airflow;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -184,7 +184,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:hvac_rpm_mainmotor;1",
+        "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:hvac_rpm_mainmotor;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -194,6 +194,71 @@
         },
         "name": "hvac_rpm_mainmotor",
         "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:sw_info;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Software Information"
+        },
+        "name": "sw_info",
+        "schema": {
+          "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:sw_info:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:sw_info:schema:version;1",
+              "displayName": {
+                "en": "Version"
+              },
+              "name": "version",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:sw_info:schema:cntl_board;1",
+              "displayName": {
+                "en": "Control PCBA"
+              },
+              "name": "cntl_board",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:sw_info:schema:cntl_board:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:sw_info:schema:cntl_board:schema:app_v;1",
+                    "displayName": {
+                      "en": "App Version"
+                    },
+                    "name": "app_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:sw_info:schema:cntl_board:schema:os_v;1",
+                    "displayName": {
+                      "en": "OS Version"
+                    },
+                    "name": "os_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:HVACInterface:sw_info:schema:cntl_board:schema:boot_v;1",
+                    "displayName": {
+                      "en": "Boot Loader Version"
+                    },
+                    "name": "boot_v",
+                    "schema": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
       }
     ],
     "displayName": {
@@ -209,7 +274,7 @@
     "@type": "Interface",
     "contents": [
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_temperature;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:walkin_fridge_temperature;1",
         "@type": [
           "Telemetry",
           "Temperature"
@@ -221,7 +286,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_humidity;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:walkin_fridge_humidity;1",
         "@type": [
           "Telemetry",
           "Humidity"
@@ -233,7 +298,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_door_open_count;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:walkin_fridge_door_open_count;1",
         "@type": [
           "Telemetry",
           "Humidity"
@@ -245,7 +310,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_door_ajar;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:walkin_fridge_door_ajar;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -257,7 +322,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_fridge_compressor_health;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:walkin_fridge_compressor_health;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -267,6 +332,71 @@
         },
         "name": "walkin_fridge_compressor_health",
         "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:sw_info;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Software Information"
+        },
+        "name": "sw_info",
+        "schema": {
+          "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:sw_info:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:sw_info:schema:version;1",
+              "displayName": {
+                "en": "Version"
+              },
+              "name": "version",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:sw_info:schema:cntl_board;1",
+              "displayName": {
+                "en": "Control PCBA"
+              },
+              "name": "cntl_board",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:sw_info:schema:cntl_board:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:sw_info:schema:cntl_board:schema:app_v;1",
+                    "displayName": {
+                      "en": "App Version"
+                    },
+                    "name": "app_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:sw_info:schema:cntl_board:schema:os_v;1",
+                    "displayName": {
+                      "en": "OS Version"
+                    },
+                    "name": "os_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:WalkinFridgeInterface:sw_info:schema:cntl_board:schema:boot_v;1",
+                    "displayName": {
+                      "en": "Boot Loader Version"
+                    },
+                    "name": "boot_v",
+                    "schema": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
       }
     ],
     "displayName": {
@@ -282,7 +412,7 @@
     "@type": "Interface",
     "contents": [
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_temperature;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:walkin_Freezer_temperature;1",
         "@type": [
           "Telemetry",
           "Temperature"
@@ -294,7 +424,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_humidity;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:walkin_Freezer_humidity;1",
         "@type": [
           "Telemetry",
           "Humidity"
@@ -306,7 +436,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_door_open_count;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:walkin_Freezer_door_open_count;1",
         "@type": [
           "Telemetry",
           "Humidity"
@@ -318,7 +448,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_door_ajar;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:walkin_Freezer_door_ajar;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -330,7 +460,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:walkin_Freezer_compressor_health;1",
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:walkin_Freezer_compressor_health;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -340,6 +470,71 @@
         },
         "name": "walkin_Freezer_compressor_health",
         "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:sw_info;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Software Information"
+        },
+        "name": "sw_info",
+        "schema": {
+          "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:sw_info:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:sw_info:schema:version;1",
+              "displayName": {
+                "en": "Version"
+              },
+              "name": "version",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:sw_info:schema:cntl_board;1",
+              "displayName": {
+                "en": "Control PCBA"
+              },
+              "name": "cntl_board",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:sw_info:schema:cntl_board:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:sw_info:schema:cntl_board:schema:app_v;1",
+                    "displayName": {
+                      "en": "App Version"
+                    },
+                    "name": "app_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:sw_info:schema:cntl_board:schema:os_v;1",
+                    "displayName": {
+                      "en": "OS Version"
+                    },
+                    "name": "os_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:WalkinFreezerInterface:sw_info:schema:cntl_board:schema:boot_v;1",
+                    "displayName": {
+                      "en": "Boot Loader Version"
+                    },
+                    "name": "boot_v",
+                    "schema": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
       }
     ],
     "displayName": {
@@ -355,7 +550,7 @@
     "@type": "Interface",
     "contents": [
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:fryer_temperature;1",
+        "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:fryer_temperature;1",
         "@type": [
           "Telemetry",
           "Temperature"
@@ -367,7 +562,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:fryer_oil_quality;1",
+        "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:fryer_oil_quality;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -379,7 +574,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:fryer_heater_health;1",
+        "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:fryer_heater_health;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -389,6 +584,71 @@
         },
         "name": "fryer_heater_health",
         "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:sw_info;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Software Information"
+        },
+        "name": "sw_info",
+        "schema": {
+          "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:sw_info:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:sw_info:schema:version;1",
+              "displayName": {
+                "en": "Version"
+              },
+              "name": "version",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:sw_info:schema:cntl_board;1",
+              "displayName": {
+                "en": "Control PCBA"
+              },
+              "name": "cntl_board",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:sw_info:schema:cntl_board:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:sw_info:schema:cntl_board:schema:app_v;1",
+                    "displayName": {
+                      "en": "App Version"
+                    },
+                    "name": "app_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:sw_info:schema:cntl_board:schema:os_v;1",
+                    "displayName": {
+                      "en": "OS Version"
+                    },
+                    "name": "os_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:FryerInterface:sw_info:schema:cntl_board:schema:boot_v;1",
+                    "displayName": {
+                      "en": "Boot Loader Version"
+                    },
+                    "name": "boot_v",
+                    "schema": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
       }
     ],
     "displayName": {
@@ -404,7 +664,7 @@
     "@type": "Interface",
     "contents": [
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_temperature;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:Standing_fridge_temperature;1",
         "@type": [
           "Telemetry",
           "Temperature"
@@ -416,7 +676,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_humidity;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:Standing_fridge_humidity;1",
         "@type": [
           "Telemetry",
           "Humidity"
@@ -428,7 +688,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_door_open_count;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:Standing_fridge_door_open_count;1",
         "@type": [
           "Telemetry",
           "Humidity"
@@ -440,7 +700,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_door_ajar;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:Standing_fridge_door_ajar;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -452,7 +712,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_fridge_compressor_health;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:Standing_fridge_compressor_health;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -462,6 +722,71 @@
         },
         "name": "Standing_fridge_compressor_health",
         "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:sw_info;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Software Information"
+        },
+        "name": "sw_info",
+        "schema": {
+          "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:sw_info:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:sw_info:schema:version;1",
+              "displayName": {
+                "en": "Version"
+              },
+              "name": "version",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:sw_info:schema:cntl_board;1",
+              "displayName": {
+                "en": "Control PCBA"
+              },
+              "name": "cntl_board",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:sw_info:schema:cntl_board:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:sw_info:schema:cntl_board:schema:app_v;1",
+                    "displayName": {
+                      "en": "App Version"
+                    },
+                    "name": "app_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:sw_info:schema:cntl_board:schema:os_v;1",
+                    "displayName": {
+                      "en": "OS Version"
+                    },
+                    "name": "os_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:StandingFridgeInterface:sw_info:schema:cntl_board:schema:boot_v;1",
+                    "displayName": {
+                      "en": "Boot Loader Version"
+                    },
+                    "name": "boot_v",
+                    "schema": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
       }
     ],
     "displayName": {
@@ -477,7 +802,7 @@
     "@type": "Interface",
     "contents": [
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_temperature;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:Standing_Freezer_temperature;1",
         "@type": [
           "Telemetry",
           "Temperature"
@@ -489,7 +814,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_humidity;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:Standing_Freezer_humidity;1",
         "@type": [
           "Telemetry",
           "Humidity"
@@ -501,7 +826,7 @@
         "schema": "double"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_door_open_count;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:Standing_Freezer_door_open_count;1",
         "@type": [
           "Telemetry",
           "Humidity"
@@ -513,7 +838,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_door_ajar;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:Standing_Freezer_door_ajar;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -525,7 +850,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:Standing_Freezer_compressor_health;1",
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:Standing_Freezer_compressor_health;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -535,6 +860,71 @@
         },
         "name": "Standing_Freezer_compressor_health",
         "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:sw_info;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Software Information"
+        },
+        "name": "sw_info",
+        "schema": {
+          "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:sw_info:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:sw_info:schema:version;1",
+              "displayName": {
+                "en": "Version"
+              },
+              "name": "version",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:sw_info:schema:cntl_board;1",
+              "displayName": {
+                "en": "Control PCBA"
+              },
+              "name": "cntl_board",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:sw_info:schema:cntl_board:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:sw_info:schema:cntl_board:schema:app_v;1",
+                    "displayName": {
+                      "en": "App Version"
+                    },
+                    "name": "app_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:sw_info:schema:cntl_board:schema:os_v;1",
+                    "displayName": {
+                      "en": "OS Version"
+                    },
+                    "name": "os_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:StandingFreezerInterface:sw_info:schema:cntl_board:schema:boot_v;1",
+                    "displayName": {
+                      "en": "Boot Loader Version"
+                    },
+                    "name": "boot_v",
+                    "schema": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
       }
     ],
     "displayName": {
@@ -572,6 +962,71 @@
         },
         "name": "cold_table_compressor_health",
         "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:sw_info;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Software Information"
+        },
+        "name": "sw_info",
+        "schema": {
+          "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:sw_info:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:sw_info:schema:version;1",
+              "displayName": {
+                "en": "Version"
+              },
+              "name": "version",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:sw_info:schema:cntl_board;1",
+              "displayName": {
+                "en": "Control PCBA"
+              },
+              "name": "cntl_board",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:sw_info:schema:cntl_board:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:sw_info:schema:cntl_board:schema:app_v;1",
+                    "displayName": {
+                      "en": "App Version"
+                    },
+                    "name": "app_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:sw_info:schema:cntl_board:schema:os_v;1",
+                    "displayName": {
+                      "en": "OS Version"
+                    },
+                    "name": "os_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:ColdTableInterface:sw_info:schema:cntl_board:schema:boot_v;1",
+                    "displayName": {
+                      "en": "Boot Loader Version"
+                    },
+                    "name": "boot_v",
+                    "schema": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
       }
     ],
     "displayName": {
@@ -611,7 +1066,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:dishwasher_motor_health;1",
+        "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:dishwasher_motor_health;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -623,7 +1078,7 @@
         "schema": "integer"
       },
       {
-        "@id": "dtmi:larouexSmartKitchen2049:AmbientInterface:dishwasher_heating_element_health;1",
+        "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:dishwasher_heating_element_health;1",
         "@type": [
           "Telemetry",
           "integer"
@@ -633,6 +1088,71 @@
         },
         "name": "dishwasher_heating_element_health",
         "schema": "integer"
+      },
+      {
+        "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:sw_info;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Software Information"
+        },
+        "name": "sw_info",
+        "schema": {
+          "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:sw_info:schema;1",
+          "@type": "Object",
+          "displayName": {
+            "en": "Object"
+          },
+          "fields": [
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:sw_info:schema:version;1",
+              "displayName": {
+                "en": "Version"
+              },
+              "name": "version",
+              "schema": "string"
+            },
+            {
+              "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:sw_info:schema:cntl_board;1",
+              "displayName": {
+                "en": "Control PCBA"
+              },
+              "name": "cntl_board",
+              "schema": {
+                "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:sw_info:schema:cntl_board:schema;1",
+                "@type": "Object",
+                "displayName": {
+                  "en": "Object"
+                },
+                "fields": [
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:sw_info:schema:cntl_board:schema:app_v;1",
+                    "displayName": {
+                      "en": "App Version"
+                    },
+                    "name": "app_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:sw_info:schema:cntl_board:schema:os_v;1",
+                    "displayName": {
+                      "en": "OS Version"
+                    },
+                    "name": "os_v",
+                    "schema": "string"
+                  },
+                  {
+                    "@id": "dtmi:larouexSmartKitchen2049:DishwasherInterface:sw_info:schema:cntl_board:schema:boot_v;1",
+                    "displayName": {
+                      "en": "Boot Loader Version"
+                    },
+                    "name": "boot_v",
+                    "schema": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
       }
     ],
     "displayName": {
