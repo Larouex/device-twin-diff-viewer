@@ -13,12 +13,20 @@ The capabilities of this project are defined by the various project lifecycle th
 * <b>Device Fleet Simulation</b> - Configuration of simulation of the devices and subscribing to the Telemetry Server to send real-world telemetry values and firmware simulation for handling changes to the properties (Twins) and code for handling state changes from property setting, etc.
 * <b>Twin History and Diff Viewer</b> - Dashboard viewer that provides a historical view and comparison diff for Twin changes (Desired and Reported)
 ## Contents
-* [Requirements for this Project](#)
-
+* [Intended Audience for this Project?](#requirements-for-this-project)
+* [Requirements for this Project](#requirements-for-this-project)
+* [Intended Audience for this Project?](#)
+## Intended Audience for this Project?
+* System Integrators
+* Developers
+* Administrators of an IoT Central Application
 ## Requirements for this Project
 The requirements and preparations are assumed for this project...
 
 * You have an Azure Account
+
+## The Smart Kitchen Overview
+The core of this demo application for Azure IoT Central is the emulation of IoT in the context of a commercial kitchen. We have included the following emulated appliance models that you would find in a commercial kitchen...
 
 ## HVAC
 ![alt text](./Assets/commercial-hvac-header.png "Kitchen HVAC System")
