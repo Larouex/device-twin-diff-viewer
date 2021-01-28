@@ -24,12 +24,17 @@ from classes.maptelemetry import MapTelemetry
 
 class TelemetryServer():
 
-    def __init__(self, Log, WhatIf):
+    def __init__(self, Log):
       self.logger = Log
-      self.whatif = WhatIf
+
+      # Instance maps
       self.telemetry_server_instance = None
       self.telemetry_server_instance_stop = None
       self.telemetry_server_instance_init = None
+
+      # Logging Mappers
+      data = [x for x in self.config["ClassLoggingMaps"] if x["Name"] == "TelemetryServer"]
+      self.class_name_map = data[0]["LoggingId"]
 
       # Namespaces
       self.id_namespace_twins = None

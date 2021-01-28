@@ -1,7 +1,7 @@
 # ==================================================================================
-#   File:   devicefleet.py
+#   File:   devicefleetserver.py
 #   Author: Larry W Jordan Jr (larouex@gmail.com)
-#   Use:    Run a fleet of devices that are sending data from telemetryserver
+#   Use:    Run a fleet of devices that are sending data from TelemetryServer
 #
 #   Online:   https://github.com/Larouex/device-twin-diff-viewer
 #
@@ -35,15 +35,20 @@ class Listener:
     def read_payload(self):
       return self.payload
 
-class DeviceFleet():
+class DeviceFleetServer():
 
-    def __init__(self, Log, WhatIf):
+    def __init__(self, Log):
       self.logger = Log
-      self.whatif = WhatIf
 
       # Load configuration
       self.config = []
       self.load_config()
+
+      # Logging Mappers
+      data = [x for x in self.config["ClassLoggingMaps"] if x["Name"] == "DeviceFleetServer"]
+      self.class_name_map = data[0]["LoggingId"]
+
+      # payload that is published
       self.payload = {}
 
       # Telemetry Mapping
@@ -59,7 +64,7 @@ class DeviceFleet():
     # -------------------------------------------------------------------------------
     async def run(self, TelemetryServer):
 
-      self.logger.info("[DEVICEFLEET] Starting...")
+      self.logger.info("[%s] Starting..." % self.class_name_map)
 
       # Subscribe to the Telemetry Server Publication of Telemetry Data
       pub.subscribe(self.listener, pub.ALL_TOPICS)
@@ -70,17 +75,17 @@ class DeviceFleet():
       while True:
 
         for telemetry in self.map_telemetry:
-          self.logger.info("[DEVICEFLEET LOOP] NAME: %s" % telemetry["Name"])
-          self.logger.info("[DEVICEFLEET LOOP] INTERFACE: %s" % telemetry["InterfacelId"])
+          self.logger.info("[%s LOOP] NAME: %s" % (self.class_name_map, telemetry["Name"]))
+          self.logger.info("[%s LOOP] INTERFACE: %s" % (self.class_name_map, telemetry["InterfacelId"]))
 
           await TelemetryServer.run(telemetry)
 
           self.payload = self.listener.read_payload()
           map_telemetry_interfaces = TelemetryServer.create_map_telemetry_root(self.payload["Name"], self.payload["InterfacelId"], self.payload["InterfaceInstanceName"])
           map_telemetry_interfaces["Variables"] = self.payload["Payload"]
-          self.logger.info("[DEVICEFLEET LOOP] PUBLISHED: %s" % map_telemetry_interfaces)
+          self.logger.info("[%s LOOP] PUBLISHED: %s" % (self.class_name_map, map_telemetry_interfaces))
 
-        self.logger.info("[DEVICEFLEET LOOP] WAITING: %s" % self.config["ServerFrequencyInSeconds"])
+        self.logger.info("[%s LOOP] WAITING: %s" % (self.class_name_map, self.config["ServerFrequencyInSeconds"]))
         await asyncio.sleep(self.config["ServerFrequencyInSeconds"])
 
 

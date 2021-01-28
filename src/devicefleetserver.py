@@ -1,8 +1,8 @@
 #!/home/Larouex/Python
 # ==================================================================================
-#   File:   devicefleet.py
+#   File:   devicefleetserver.py
 #   Author: Larry W Jordan Jr (larouex@gmail.com)
-#   Use:    Run a fleet of devices that are sending data from telemetryserver
+#   Use:    Run a fleet of devices that are sending data from TelemetryServer
 #
 #   Online:   https://github.com/Larouex/device-twin-diff-viewer
 #
@@ -13,18 +13,16 @@ import  getopt, sys, time, string, threading, asyncio, os
 import logging as Log
 
 # our classes
-from classes.devicefleet import DeviceFleet
+from classes.devicefleetserver import DeviceFleetServer
 from classes.telemetryserver import TelemetryServer
 from classes.config import Config
 
 # -------------------------------------------------------------------------------
 #   Setup the Telemetry Server for the Device Patterns
 # -------------------------------------------------------------------------------
-async def setup_telemetry_server(WhatIf, TelemetryServer):
+async def setup_telemetry_server(TelemetryServer):
 
   try:
-
-    Log.info("[DEVICEFLEET] Setting up Telemetry Server...")
     return await TelemetryServer.setup()
 
   except Exception as ex:
@@ -35,12 +33,10 @@ async def setup_telemetry_server(WhatIf, TelemetryServer):
 # -------------------------------------------------------------------------------
 #   Start the Device Fleet which in turn starts the Telemetry Server
 # -------------------------------------------------------------------------------
-async def run_fleet(WhatIf, DeviceFleet, TelemetryServer):
+async def run_fleet(DeviceFleetServer, TelemetryServer):
 
   try:
-
-    Log.info("[DEVICEFLEET] Starting Device Fleet...")
-    return await DeviceFleet.run(TelemetryServer)
+    return await DeviceFleetServer.run(TelemetryServer)
 
   except Exception as ex:
     Log.error("[ERROR] %s" % ex)
@@ -52,12 +48,9 @@ async def run_fleet(WhatIf, DeviceFleet, TelemetryServer):
 # -------------------------------------------------------------------------------
 async def main(argv):
 
-  # parameters
-  whatif = False
-
   # execution state from args
-  short_options = "hvdw"
-  long_options = ["help", "verbose", "debug", "whatif"]
+  short_options = "hvd"
+  long_options = ["help", "verbose", "debug"]
   full_cmd_arguments = sys.argv
   argument_list = full_cmd_arguments[1:]
   try:
@@ -69,7 +62,7 @@ async def main(argv):
 
     if current_argument in ("-h", "--help"):
       print("------------------------------------------------------------------------------------------------------------------------------------------")
-      print("HELP for devicefleet.py")
+      print("HELP for devicefleetserver.py")
       print("------------------------------------------------------------------------------------------------------------------------------------------")
       print("")
       print("  BASIC PARAMETERS...")
@@ -77,7 +70,6 @@ async def main(argv):
       print("  -h or --help - Print out this Help Information")
       print("  -v or --verbose - Debug Mode with lots of Data will be Output to Assist with Debugging")
       print("  -d or --debug - Debug Mode with lots of DEBUG Data will be Output to Assist with Tracing and Debugging")
-      print("  -w or --whatif - Combine with Verbose it will Output the Configuration sans starting the Server")
       print("------------------------------------------------------------------------------------------------------------------------------------------")
       return
 
@@ -93,18 +85,14 @@ async def main(argv):
     else:
       Log.basicConfig(format="%(levelname)s: %(message)s")
 
-    if current_argument in ("-w", "--whatif"):
-      whatif = True
-      Log.info("WhatIf Mode...")
-
   # Configure Server
-  telemetry_server = TelemetryServer(Log, whatif)
-  await setup_telemetry_server(whatif, telemetry_server)
+  telemetry_server = TelemetryServer(Log)
+  await setup_telemetry_server(telemetry_server)
   Log.info("[SERVER] Instance Info (telemetry_server): %s" % telemetry_server)
 
   # Configure & Start DeviceFleet
-  device_fleet = DeviceFleet(Log, whatif)
-  await run_fleet(whatif, device_fleet, telemetry_server)
+  device_fleet_server = DeviceFleetServer(Log)
+  await run_fleet(device_fleet_server, telemetry_server)
 
 if __name__ == "__main__":
     asyncio.run(main(sys.argv[1:]))

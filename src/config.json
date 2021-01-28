@@ -1,5 +1,5 @@
 {
-  "ServerDiscoveryName": "Smart Monitor for Cold Hub",
+  "ApplicationName": "Larouex Smart Kitchen for Azure IoT Central",
   "Description": "Monitoring of Cold Hub",
   "ApplicationUri": "urn:LarouexSmartKitchen:Server",
   "ServerFrequencyInSeconds": 5,
@@ -55,6 +55,16 @@
       "IgnoreInterfaceIds": [
         "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:AmbientInterface;1"
       ]
+    }
+  ],
+  "ClassLoggingMaps":[
+    {
+      "Name": "DeviceFleetServer",
+      "LoggingId": "DEVICE FLEET SERVER"
+    },
+    {
+      "Name": "TelemetryServer",
+      "LoggingId": "TELEMETRY SERVER"
     }
   ],
 	"Nodes": [
