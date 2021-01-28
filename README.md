@@ -2,7 +2,7 @@
 The Device Twin Scenario Viewer is a standalone project that is designed assist device developers and testers who are using the forms and update mechanisms in Azure IoT Central. 
 ## Project Overview
 
-* <b>Powerful Emulation</b> - Dynamic Configuration of OPC-UA Server, Nodes and Variables allow you to emulate topologies. In this project it is an instance of a Smart Commercial Kitchen.
+* <b>Powerful Emulation</b> - Dynamic Configuration of Devices, Nodes and Variables allow you to emulate complex "Digital Twin" topologies. In this project we are working with instances of appliances in a commercial kitchen.
 * <b>Azure IoT Central SaaS Integration</b> - Azure IoT Central is our Software as a Service (SaaS) 'Application Platform' that provides telemetry, device management and rich data visualizations. That is just a small part of what it can do. We want to provide you with a way to understand and leverage these features with little coding, some configuration and tons of power!
 
 ## Project Capabilities
