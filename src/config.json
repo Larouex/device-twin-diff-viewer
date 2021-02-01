@@ -65,6 +65,14 @@
     {
       "Name": "TelemetryServer",
       "LoggingId": "TELEMETRY SERVER"
+    },
+    {
+      "Name": "DeviceClient",
+      "LoggingId": "DEVICE CLIENT"
+    },
+    {
+      "Name": "ProvisionDevice",
+      "LoggingId": "PROVISION DEVICE"
     }
   ],
 	"Nodes": [

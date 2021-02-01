@@ -1,4828 +1,631 @@
-{
-  "NameSpace": "larouex-smart-kitchen",
-  "Created": "2020-11-12 10:38:19.972146",
-  "Devices": [
-    {
-      "Name": "larouex-smart-kitchen-001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:13.343187",
-      "NodeId": "ns=2;i=1",
-      "DeviceType": "Twins",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Server:1",
-      "Interfaces": [
-        {
-          "Name": "Ambient",
-          "InterfacelId": "urn:larouexsmartkitchen:AmbientInterface:1",
-          "InterfaceInstanceName": "AmbientInterface",
-          "Variables": [
-            {
-              "DisplayName": "Outside Temperature",
-              "NodeId": "ns=2;i=2",
-              "TelemetryName": "outside_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring5",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                72.45,
-                73.23,
-                85.9,
-                91.54,
-                73.28
-              ]
-            },
-            {
-              "DisplayName": "Outside Humidity",
-              "NodeId": "ns=2;i=3",
-              "TelemetryName": "outside_humidity",
-              "IoTCDataType": "float",
-              "Frequency": "Ring5",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            }
-          ]
-        },
-        {
-          "Name": "HVAC",
-          "InterfacelId": "urn:larouexsmartkitchen:HVACInterface:1",
-          "InterfaceInstanceName": "HVACInterface",
-          "Variables": [
-            {
-              "DisplayName": "HVAC Airflow Temperature",
-              "NodeId": "ns=2;i=4",
-              "TelemetryName": "hvac_airflow_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                72.45,
-                73.23,
-                73.9,
-                71.54,
-                72.28,
-                73.23
-              ]
-            },
-            {
-              "DisplayName": "HVAC Airflow CFM",
-              "NodeId": "ns=2;i=5",
-              "TelemetryName": "hvac_cfm_airflow",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                127,
-                121,
-                131,
-                130,
-                129
-              ]
-            },
-            {
-              "DisplayName": "HVAC Main Motor RPM",
-              "NodeId": "ns=2;i=6",
-              "TelemetryName": "hvac_rpm_mainmotor",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                18000,
-                18500,
-                18200,
-                19000,
-                19200
-              ]
-            }
-          ]
-        },
-        {
-          "Name": "WalkinFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFridgeInterface:1",
-          "InterfaceInstanceName": "WalkinFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Fridge Temperature",
-              "NodeId": "ns=2;i=7",
-              "TelemetryName": "walkin_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Humidity",
-              "NodeId": "ns=2;i=8",
-              "TelemetryName": "walkin_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Open Count",
-              "NodeId": "ns=2;i=9",
-              "TelemetryName": "walkin_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Ajar",
-              "NodeId": "ns=2;i=10",
-              "TelemetryName": "walkin_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Compressor Health",
-              "NodeId": "ns=2;i=11",
-              "TelemetryName": "walkin_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        },
-        {
-          "Name": "WalkinFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFreezerInterface:1",
-          "InterfaceInstanceName": "WalkinFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Freezer Temperature",
-              "NodeId": "ns=2;i=12",
-              "TelemetryName": "walkin_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                0,
-                1.34,
-                2.21,
-                0.34,
-                3.22,
-                4.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Humidity",
-              "NodeId": "ns=2;i=13",
-              "TelemetryName": "walkin_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99.1,
-                98.0,
-                97.3,
-                93.4,
-                94.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Open Count",
-              "NodeId": "ns=2;i=14",
-              "TelemetryName": "walkin_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Ajar",
-              "NodeId": "ns=2;i=15",
-              "TelemetryName": "walkin_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Compressor Health",
-              "NodeId": "ns=2;i=16",
-              "TelemetryName": "walkin_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        },
-        {
-          "Name": "Fryer",
-          "InterfacelId": "urn:larouexsmartkitchen:FryerInterface:1",
-          "InterfaceInstanceName": "FryerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Fryer Temperature",
-              "NodeId": "ns=2;i=17",
-              "TelemetryName": "fryer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                349.2,
-                332.1,
-                350.9,
-                340.9,
-                353.7,
-                351.4
-              ]
-            },
-            {
-              "DisplayName": "Fryer Oil Quality",
-              "NodeId": "ns=2;i=18",
-              "TelemetryName": "fryer_oil_quality",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 10,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                100,
-                95,
-                92,
-                87,
-                86,
-                79,
-                75,
-                67,
-                62,
-                50
-              ]
-            },
-            {
-              "DisplayName": "Fryer Heater Health",
-              "NodeId": "ns=2;i=19",
-              "TelemetryName": "fryer_heater_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        },
-        {
-          "Name": "StandingFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFridgeInterface:1",
-          "InterfaceInstanceName": "StandingFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Fridge Temperature",
-              "NodeId": "ns=2;i=20",
-              "TelemetryName": "standing_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Humidity",
-              "NodeId": "ns=2;i=21",
-              "TelemetryName": "standing_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Open Count",
-              "NodeId": "ns=2;i=22",
-              "TelemetryName": "standing_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Ajar",
-              "NodeId": "ns=2;i=23",
-              "TelemetryName": "standing_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Compressor Health",
-              "NodeId": "ns=2;i=24",
-              "TelemetryName": "standing_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        },
-        {
-          "Name": "StandingFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFreezerInterface:1",
-          "InterfaceInstanceName": "StandingFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Freezer Temperature",
-              "NodeId": "ns=2;i=25",
-              "TelemetryName": "standing_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Humidity",
-              "NodeId": "ns=2;i=26",
-              "TelemetryName": "standing_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Open Count",
-              "NodeId": "ns=2;i=27",
-              "TelemetryName": "standing_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Ajar",
-              "NodeId": "ns=2;i=28",
-              "TelemetryName": "standing_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Compressor Health",
-              "NodeId": "ns=2;i=29",
-              "TelemetryName": "standing_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        },
-        {
-          "Name": "ColdTable",
-          "InterfacelId": "urn:larouexsmartkitchen:ColdTableInterface:1",
-          "InterfaceInstanceName": "ColdTableInterface",
-          "Variables": [
-            {
-              "DisplayName": "Cold Table Temperature",
-              "NodeId": "ns=2;i=30",
-              "TelemetryName": "cold_table_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Cold Table Compressor Health",
-              "NodeId": "ns=2;i=31",
-              "TelemetryName": "cold_table_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        },
-        {
-          "Name": "Dishwasher",
-          "InterfacelId": "urn:larouexsmartkitchen:DishwasherInterface:1",
-          "InterfaceInstanceName": "DishwasherInterface",
-          "Variables": [
-            {
-              "DisplayName": "Dishwasher Temperature",
-              "NodeId": "ns=2;i=32",
-              "TelemetryName": "dishwasher_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                161.45,
-                160.23,
-                162.9,
-                159.54,
-                158.28,
-                163.23
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Wash Cycles",
-              "NodeId": "ns=2;i=33",
-              "TelemetryName": "dishwasher_wash_cycles",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                12,
-                13,
-                16,
-                17,
-                11
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Motor Health",
-              "NodeId": "ns=2;i=34",
-              "TelemetryName": "dishwasher_motor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Heating Element Health",
-              "NodeId": "ns=2;i=35",
-              "TelemetryName": "dishwasher_heating_element_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "HVAC001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:13.688190",
-      "NodeId": "ns=4;i=1",
-      "DeviceType": "Gateways",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:HVAC:1",
-      "Interfaces": [
-        {
-          "Name": "HVAC",
-          "InterfacelId": "urn:larouexsmartkitchen:HVACInterface:1",
-          "InterfaceInstanceName": "HVACInterface",
-          "Variables": [
-            {
-              "DisplayName": "HVAC Airflow Temperature",
-              "NodeId": "ns=4;i=2",
-              "TelemetryName": "hvac_airflow_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                72.45,
-                73.23,
-                73.9,
-                71.54,
-                72.28,
-                73.23
-              ]
-            },
-            {
-              "DisplayName": "HVAC Airflow CFM",
-              "NodeId": "ns=4;i=3",
-              "TelemetryName": "hvac_cfm_airflow",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                127,
-                121,
-                131,
-                130,
-                129
-              ]
-            },
-            {
-              "DisplayName": "HVAC Main Motor RPM",
-              "NodeId": "ns=4;i=4",
-              "TelemetryName": "hvac_rpm_mainmotor",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                18000,
-                18500,
-                18200,
-                19000,
-                19200
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "WalkinFridge001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:14.057269",
-      "NodeId": "ns=4;i=5",
-      "DeviceType": "Gateways",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFridge:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFridgeInterface:1",
-          "InterfaceInstanceName": "WalkinFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Fridge Temperature",
-              "NodeId": "ns=4;i=6",
-              "TelemetryName": "walkin_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Humidity",
-              "NodeId": "ns=4;i=7",
-              "TelemetryName": "walkin_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Open Count",
-              "NodeId": "ns=4;i=8",
-              "TelemetryName": "walkin_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Ajar",
-              "NodeId": "ns=4;i=9",
-              "TelemetryName": "walkin_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Compressor Health",
-              "NodeId": "ns=4;i=10",
-              "TelemetryName": "walkin_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "WalkinFreezer001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:14.451269",
-      "NodeId": "ns=4;i=11",
-      "DeviceType": "Gateways",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFreezerInterface:1",
-          "InterfaceInstanceName": "WalkinFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Freezer Temperature",
-              "NodeId": "ns=4;i=12",
-              "TelemetryName": "walkin_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                0,
-                1.34,
-                2.21,
-                0.34,
-                3.22,
-                4.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Humidity",
-              "NodeId": "ns=4;i=13",
-              "TelemetryName": "walkin_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99.1,
-                98.0,
-                97.3,
-                93.4,
-                94.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Open Count",
-              "NodeId": "ns=4;i=14",
-              "TelemetryName": "walkin_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Ajar",
-              "NodeId": "ns=4;i=15",
-              "TelemetryName": "walkin_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Compressor Health",
-              "NodeId": "ns=4;i=16",
-              "TelemetryName": "walkin_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Fryer001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:14.783268",
-      "NodeId": "ns=4;i=17",
-      "DeviceType": "Gateways",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Fryer:1",
-      "Interfaces": [
-        {
-          "Name": "Fryer",
-          "InterfacelId": "urn:larouexsmartkitchen:FryerInterface:1",
-          "InterfaceInstanceName": "FryerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Fryer Temperature",
-              "NodeId": "ns=4;i=18",
-              "TelemetryName": "fryer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                349.2,
-                332.1,
-                350.9,
-                340.9,
-                353.7,
-                351.4
-              ]
-            },
-            {
-              "DisplayName": "Fryer Oil Quality",
-              "NodeId": "ns=4;i=19",
-              "TelemetryName": "fryer_oil_quality",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 10,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                100,
-                95,
-                92,
-                87,
-                86,
-                79,
-                75,
-                67,
-                62,
-                50
-              ]
-            },
-            {
-              "DisplayName": "Fryer Heater Health",
-              "NodeId": "ns=4;i=20",
-              "TelemetryName": "fryer_heater_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "StandingFridge001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:15.141277",
-      "NodeId": "ns=4;i=21",
-      "DeviceType": "Gateways",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFridge:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFridgeInterface:1",
-          "InterfaceInstanceName": "StandingFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Fridge Temperature",
-              "NodeId": "ns=4;i=22",
-              "TelemetryName": "standing_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Humidity",
-              "NodeId": "ns=4;i=23",
-              "TelemetryName": "standing_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Open Count",
-              "NodeId": "ns=4;i=24",
-              "TelemetryName": "standing_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Ajar",
-              "NodeId": "ns=4;i=25",
-              "TelemetryName": "standing_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Compressor Health",
-              "NodeId": "ns=4;i=26",
-              "TelemetryName": "standing_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "StandingFreezer001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:15.462270",
-      "NodeId": "ns=4;i=27",
-      "DeviceType": "Gateways",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFreezerInterface:1",
-          "InterfaceInstanceName": "StandingFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Freezer Temperature",
-              "NodeId": "ns=4;i=28",
-              "TelemetryName": "standing_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Humidity",
-              "NodeId": "ns=4;i=29",
-              "TelemetryName": "standing_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Open Count",
-              "NodeId": "ns=4;i=30",
-              "TelemetryName": "standing_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Ajar",
-              "NodeId": "ns=4;i=31",
-              "TelemetryName": "standing_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Compressor Health",
-              "NodeId": "ns=4;i=32",
-              "TelemetryName": "standing_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "ColdTable001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:15.873271",
-      "NodeId": "ns=4;i=33",
-      "DeviceType": "Gateways",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:ColdTable:1",
-      "Interfaces": [
-        {
-          "Name": "ColdTable",
-          "InterfacelId": "urn:larouexsmartkitchen:ColdTableInterface:1",
-          "InterfaceInstanceName": "ColdTableInterface",
-          "Variables": [
-            {
-              "DisplayName": "Cold Table Temperature",
-              "NodeId": "ns=4;i=34",
-              "TelemetryName": "cold_table_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Cold Table Compressor Health",
-              "NodeId": "ns=4;i=35",
-              "TelemetryName": "cold_table_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "Dishwasher001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:16.287268",
-      "NodeId": "ns=4;i=36",
-      "DeviceType": "Gateways",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Dishwasher:1",
-      "Interfaces": [
-        {
-          "Name": "Dishwasher",
-          "InterfacelId": "urn:larouexsmartkitchen:DishwasherInterface:1",
-          "InterfaceInstanceName": "DishwasherInterface",
-          "Variables": [
-            {
-              "DisplayName": "Dishwasher Temperature",
-              "NodeId": "ns=4;i=37",
-              "TelemetryName": "dishwasher_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                161.45,
-                160.23,
-                162.9,
-                159.54,
-                158.28,
-                163.23
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Wash Cycles",
-              "NodeId": "ns=4;i=38",
-              "TelemetryName": "dishwasher_wash_cycles",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                12,
-                13,
-                16,
-                17,
-                11
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Motor Health",
-              "NodeId": "ns=4;i=39",
-              "TelemetryName": "dishwasher_motor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Heating Element Health",
-              "NodeId": "ns=4;i=40",
-              "TelemetryName": "dishwasher_heating_element_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-HVAC-001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:16.615269",
-      "NodeId": "ns=4;i=41",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:HVAC:1",
-      "Interfaces": [
-        {
-          "Name": "HVAC",
-          "InterfacelId": "urn:larouexsmartkitchen:HVACInterface:1",
-          "InterfaceInstanceName": "HVACInterface",
-          "Variables": [
-            {
-              "DisplayName": "HVAC Airflow Temperature",
-              "NodeId": "ns=4;i=42",
-              "TelemetryName": "hvac_airflow_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                72.45,
-                73.23,
-                73.9,
-                71.54,
-                72.28,
-                73.23
-              ]
-            },
-            {
-              "DisplayName": "HVAC Airflow CFM",
-              "NodeId": "ns=4;i=43",
-              "TelemetryName": "hvac_cfm_airflow",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                127,
-                121,
-                131,
-                130,
-                129
-              ]
-            },
-            {
-              "DisplayName": "HVAC Main Motor RPM",
-              "NodeId": "ns=4;i=44",
-              "TelemetryName": "hvac_rpm_mainmotor",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                18000,
-                18500,
-                18200,
-                19000,
-                19200
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-HVAC-002",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:16.932269",
-      "NodeId": "ns=4;i=45",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:HVAC:1",
-      "Interfaces": [
-        {
-          "Name": "HVAC",
-          "InterfacelId": "urn:larouexsmartkitchen:HVACInterface:1",
-          "InterfaceInstanceName": "HVACInterface",
-          "Variables": [
-            {
-              "DisplayName": "HVAC Airflow Temperature",
-              "NodeId": "ns=4;i=46",
-              "TelemetryName": "hvac_airflow_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                72.45,
-                73.23,
-                73.9,
-                71.54,
-                72.28,
-                73.23
-              ]
-            },
-            {
-              "DisplayName": "HVAC Airflow CFM",
-              "NodeId": "ns=4;i=47",
-              "TelemetryName": "hvac_cfm_airflow",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                127,
-                121,
-                131,
-                130,
-                129
-              ]
-            },
-            {
-              "DisplayName": "HVAC Main Motor RPM",
-              "NodeId": "ns=4;i=48",
-              "TelemetryName": "hvac_rpm_mainmotor",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                18000,
-                18500,
-                18200,
-                19000,
-                19200
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-HVAC-003",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:17.496270",
-      "NodeId": "ns=4;i=49",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:HVAC:1",
-      "Interfaces": [
-        {
-          "Name": "HVAC",
-          "InterfacelId": "urn:larouexsmartkitchen:HVACInterface:1",
-          "InterfaceInstanceName": "HVACInterface",
-          "Variables": [
-            {
-              "DisplayName": "HVAC Airflow Temperature",
-              "NodeId": "ns=4;i=50",
-              "TelemetryName": "hvac_airflow_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                72.45,
-                73.23,
-                73.9,
-                71.54,
-                72.28,
-                73.23
-              ]
-            },
-            {
-              "DisplayName": "HVAC Airflow CFM",
-              "NodeId": "ns=4;i=51",
-              "TelemetryName": "hvac_cfm_airflow",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                127,
-                121,
-                131,
-                130,
-                129
-              ]
-            },
-            {
-              "DisplayName": "HVAC Main Motor RPM",
-              "NodeId": "ns=4;i=52",
-              "TelemetryName": "hvac_rpm_mainmotor",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                18000,
-                18500,
-                18200,
-                19000,
-                19200
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-HVAC-004",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:18.268269",
-      "NodeId": "ns=4;i=53",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:HVAC:1",
-      "Interfaces": [
-        {
-          "Name": "HVAC",
-          "InterfacelId": "urn:larouexsmartkitchen:HVACInterface:1",
-          "InterfaceInstanceName": "HVACInterface",
-          "Variables": [
-            {
-              "DisplayName": "HVAC Airflow Temperature",
-              "NodeId": "ns=4;i=54",
-              "TelemetryName": "hvac_airflow_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                72.45,
-                73.23,
-                73.9,
-                71.54,
-                72.28,
-                73.23
-              ]
-            },
-            {
-              "DisplayName": "HVAC Airflow CFM",
-              "NodeId": "ns=4;i=55",
-              "TelemetryName": "hvac_cfm_airflow",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                127,
-                121,
-                131,
-                130,
-                129
-              ]
-            },
-            {
-              "DisplayName": "HVAC Main Motor RPM",
-              "NodeId": "ns=4;i=56",
-              "TelemetryName": "hvac_rpm_mainmotor",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                18000,
-                18500,
-                18200,
-                19000,
-                19200
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-HVAC-005",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:18.720269",
-      "NodeId": "ns=4;i=57",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:HVAC:1",
-      "Interfaces": [
-        {
-          "Name": "HVAC",
-          "InterfacelId": "urn:larouexsmartkitchen:HVACInterface:1",
-          "InterfaceInstanceName": "HVACInterface",
-          "Variables": [
-            {
-              "DisplayName": "HVAC Airflow Temperature",
-              "NodeId": "ns=4;i=58",
-              "TelemetryName": "hvac_airflow_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                72.45,
-                73.23,
-                73.9,
-                71.54,
-                72.28,
-                73.23
-              ]
-            },
-            {
-              "DisplayName": "HVAC Airflow CFM",
-              "NodeId": "ns=4;i=59",
-              "TelemetryName": "hvac_cfm_airflow",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                127,
-                121,
-                131,
-                130,
-                129
-              ]
-            },
-            {
-              "DisplayName": "HVAC Main Motor RPM",
-              "NodeId": "ns=4;i=60",
-              "TelemetryName": "hvac_rpm_mainmotor",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                18000,
-                18500,
-                18200,
-                19000,
-                19200
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFridge-001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:19.255269",
-      "NodeId": "ns=4;i=61",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFridge:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFridgeInterface:1",
-          "InterfaceInstanceName": "WalkinFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Fridge Temperature",
-              "NodeId": "ns=4;i=62",
-              "TelemetryName": "walkin_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Humidity",
-              "NodeId": "ns=4;i=63",
-              "TelemetryName": "walkin_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Open Count",
-              "NodeId": "ns=4;i=64",
-              "TelemetryName": "walkin_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Ajar",
-              "NodeId": "ns=4;i=65",
-              "TelemetryName": "walkin_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Compressor Health",
-              "NodeId": "ns=4;i=66",
-              "TelemetryName": "walkin_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFridge-002",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:19.768272",
-      "NodeId": "ns=4;i=67",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFridge:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFridgeInterface:1",
-          "InterfaceInstanceName": "WalkinFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Fridge Temperature",
-              "NodeId": "ns=4;i=68",
-              "TelemetryName": "walkin_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Humidity",
-              "NodeId": "ns=4;i=69",
-              "TelemetryName": "walkin_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Open Count",
-              "NodeId": "ns=4;i=70",
-              "TelemetryName": "walkin_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Ajar",
-              "NodeId": "ns=4;i=71",
-              "TelemetryName": "walkin_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Compressor Health",
-              "NodeId": "ns=4;i=72",
-              "TelemetryName": "walkin_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFridge-003",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:20.216269",
-      "NodeId": "ns=4;i=73",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFridge:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFridgeInterface:1",
-          "InterfaceInstanceName": "WalkinFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Fridge Temperature",
-              "NodeId": "ns=4;i=74",
-              "TelemetryName": "walkin_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Humidity",
-              "NodeId": "ns=4;i=75",
-              "TelemetryName": "walkin_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Open Count",
-              "NodeId": "ns=4;i=76",
-              "TelemetryName": "walkin_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Ajar",
-              "NodeId": "ns=4;i=77",
-              "TelemetryName": "walkin_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Compressor Health",
-              "NodeId": "ns=4;i=78",
-              "TelemetryName": "walkin_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFridge-004",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:20.572333",
-      "NodeId": "ns=4;i=79",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFridge:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFridgeInterface:1",
-          "InterfaceInstanceName": "WalkinFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Fridge Temperature",
-              "NodeId": "ns=4;i=80",
-              "TelemetryName": "walkin_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Humidity",
-              "NodeId": "ns=4;i=81",
-              "TelemetryName": "walkin_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Open Count",
-              "NodeId": "ns=4;i=82",
-              "TelemetryName": "walkin_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Ajar",
-              "NodeId": "ns=4;i=83",
-              "TelemetryName": "walkin_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Compressor Health",
-              "NodeId": "ns=4;i=84",
-              "TelemetryName": "walkin_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFridge-005",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:20.920328",
-      "NodeId": "ns=4;i=85",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFridge:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFridgeInterface:1",
-          "InterfaceInstanceName": "WalkinFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Fridge Temperature",
-              "NodeId": "ns=4;i=86",
-              "TelemetryName": "walkin_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Humidity",
-              "NodeId": "ns=4;i=87",
-              "TelemetryName": "walkin_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Open Count",
-              "NodeId": "ns=4;i=88",
-              "TelemetryName": "walkin_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Door Ajar",
-              "NodeId": "ns=4;i=89",
-              "TelemetryName": "walkin_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Fridge Compressor Health",
-              "NodeId": "ns=4;i=90",
-              "TelemetryName": "walkin_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFreezer-001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:21.251456",
-      "NodeId": "ns=4;i=91",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFreezerInterface:1",
-          "InterfaceInstanceName": "WalkinFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Freezer Temperature",
-              "NodeId": "ns=4;i=92",
-              "TelemetryName": "walkin_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                0,
-                1.34,
-                2.21,
-                0.34,
-                3.22,
-                4.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Humidity",
-              "NodeId": "ns=4;i=93",
-              "TelemetryName": "walkin_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99.1,
-                98.0,
-                97.3,
-                93.4,
-                94.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Open Count",
-              "NodeId": "ns=4;i=94",
-              "TelemetryName": "walkin_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Ajar",
-              "NodeId": "ns=4;i=95",
-              "TelemetryName": "walkin_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Compressor Health",
-              "NodeId": "ns=4;i=96",
-              "TelemetryName": "walkin_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFreezer-002",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:21.627936",
-      "NodeId": "ns=4;i=97",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFreezerInterface:1",
-          "InterfaceInstanceName": "WalkinFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Freezer Temperature",
-              "NodeId": "ns=4;i=98",
-              "TelemetryName": "walkin_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                0,
-                1.34,
-                2.21,
-                0.34,
-                3.22,
-                4.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Humidity",
-              "NodeId": "ns=4;i=99",
-              "TelemetryName": "walkin_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99.1,
-                98.0,
-                97.3,
-                93.4,
-                94.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Open Count",
-              "NodeId": "ns=4;i=100",
-              "TelemetryName": "walkin_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Ajar",
-              "NodeId": "ns=4;i=101",
-              "TelemetryName": "walkin_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Compressor Health",
-              "NodeId": "ns=4;i=102",
-              "TelemetryName": "walkin_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFreezer-003",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:21.992938",
-      "NodeId": "ns=4;i=103",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFreezerInterface:1",
-          "InterfaceInstanceName": "WalkinFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Freezer Temperature",
-              "NodeId": "ns=4;i=104",
-              "TelemetryName": "walkin_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                0,
-                1.34,
-                2.21,
-                0.34,
-                3.22,
-                4.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Humidity",
-              "NodeId": "ns=4;i=105",
-              "TelemetryName": "walkin_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99.1,
-                98.0,
-                97.3,
-                93.4,
-                94.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Open Count",
-              "NodeId": "ns=4;i=106",
-              "TelemetryName": "walkin_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Ajar",
-              "NodeId": "ns=4;i=107",
-              "TelemetryName": "walkin_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Compressor Health",
-              "NodeId": "ns=4;i=108",
-              "TelemetryName": "walkin_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFreezer-004",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:22.323938",
-      "NodeId": "ns=4;i=109",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFreezerInterface:1",
-          "InterfaceInstanceName": "WalkinFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Freezer Temperature",
-              "NodeId": "ns=4;i=110",
-              "TelemetryName": "walkin_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                0,
-                1.34,
-                2.21,
-                0.34,
-                3.22,
-                4.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Humidity",
-              "NodeId": "ns=4;i=111",
-              "TelemetryName": "walkin_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99.1,
-                98.0,
-                97.3,
-                93.4,
-                94.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Open Count",
-              "NodeId": "ns=4;i=112",
-              "TelemetryName": "walkin_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Ajar",
-              "NodeId": "ns=4;i=113",
-              "TelemetryName": "walkin_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Compressor Health",
-              "NodeId": "ns=4;i=114",
-              "TelemetryName": "walkin_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-WalkinFreezer-005",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:22.692937",
-      "NodeId": "ns=4;i=115",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:WalkinFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "WalkinFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:WalkinFreezerInterface:1",
-          "InterfaceInstanceName": "WalkinFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Walkin Freezer Temperature",
-              "NodeId": "ns=4;i=116",
-              "TelemetryName": "walkin_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                0,
-                1.34,
-                2.21,
-                0.34,
-                3.22,
-                4.23
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Humidity",
-              "NodeId": "ns=4;i=117",
-              "TelemetryName": "walkin_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99.1,
-                98.0,
-                97.3,
-                93.4,
-                94.5
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Open Count",
-              "NodeId": "ns=4;i=118",
-              "TelemetryName": "walkin_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Door Ajar",
-              "NodeId": "ns=4;i=119",
-              "TelemetryName": "walkin_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Walkin Freezer Compressor Health",
-              "NodeId": "ns=4;i=120",
-              "TelemetryName": "walkin_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Fryer-001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:23.109936",
-      "NodeId": "ns=4;i=121",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Fryer:1",
-      "Interfaces": [
-        {
-          "Name": "Fryer",
-          "InterfacelId": "urn:larouexsmartkitchen:FryerInterface:1",
-          "InterfaceInstanceName": "FryerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Fryer Temperature",
-              "NodeId": "ns=4;i=122",
-              "TelemetryName": "fryer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                349.2,
-                332.1,
-                350.9,
-                340.9,
-                353.7,
-                351.4
-              ]
-            },
-            {
-              "DisplayName": "Fryer Oil Quality",
-              "NodeId": "ns=4;i=123",
-              "TelemetryName": "fryer_oil_quality",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 10,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                100,
-                95,
-                92,
-                87,
-                86,
-                79,
-                75,
-                67,
-                62,
-                50
-              ]
-            },
-            {
-              "DisplayName": "Fryer Heater Health",
-              "NodeId": "ns=4;i=124",
-              "TelemetryName": "fryer_heater_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Fryer-002",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:23.451943",
-      "NodeId": "ns=4;i=125",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Fryer:1",
-      "Interfaces": [
-        {
-          "Name": "Fryer",
-          "InterfacelId": "urn:larouexsmartkitchen:FryerInterface:1",
-          "InterfaceInstanceName": "FryerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Fryer Temperature",
-              "NodeId": "ns=4;i=126",
-              "TelemetryName": "fryer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                349.2,
-                332.1,
-                350.9,
-                340.9,
-                353.7,
-                351.4
-              ]
-            },
-            {
-              "DisplayName": "Fryer Oil Quality",
-              "NodeId": "ns=4;i=127",
-              "TelemetryName": "fryer_oil_quality",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 10,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                100,
-                95,
-                92,
-                87,
-                86,
-                79,
-                75,
-                67,
-                62,
-                50
-              ]
-            },
-            {
-              "DisplayName": "Fryer Heater Health",
-              "NodeId": "ns=4;i=128",
-              "TelemetryName": "fryer_heater_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Fryer-003",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:24.030937",
-      "NodeId": "ns=4;i=129",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Fryer:1",
-      "Interfaces": [
-        {
-          "Name": "Fryer",
-          "InterfacelId": "urn:larouexsmartkitchen:FryerInterface:1",
-          "InterfaceInstanceName": "FryerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Fryer Temperature",
-              "NodeId": "ns=4;i=130",
-              "TelemetryName": "fryer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                349.2,
-                332.1,
-                350.9,
-                340.9,
-                353.7,
-                351.4
-              ]
-            },
-            {
-              "DisplayName": "Fryer Oil Quality",
-              "NodeId": "ns=4;i=131",
-              "TelemetryName": "fryer_oil_quality",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 10,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                100,
-                95,
-                92,
-                87,
-                86,
-                79,
-                75,
-                67,
-                62,
-                50
-              ]
-            },
-            {
-              "DisplayName": "Fryer Heater Health",
-              "NodeId": "ns=4;i=132",
-              "TelemetryName": "fryer_heater_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Fryer-004",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:25.031937",
-      "NodeId": "ns=4;i=133",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Fryer:1",
-      "Interfaces": [
-        {
-          "Name": "Fryer",
-          "InterfacelId": "urn:larouexsmartkitchen:FryerInterface:1",
-          "InterfaceInstanceName": "FryerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Fryer Temperature",
-              "NodeId": "ns=4;i=134",
-              "TelemetryName": "fryer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                349.2,
-                332.1,
-                350.9,
-                340.9,
-                353.7,
-                351.4
-              ]
-            },
-            {
-              "DisplayName": "Fryer Oil Quality",
-              "NodeId": "ns=4;i=135",
-              "TelemetryName": "fryer_oil_quality",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 10,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                100,
-                95,
-                92,
-                87,
-                86,
-                79,
-                75,
-                67,
-                62,
-                50
-              ]
-            },
-            {
-              "DisplayName": "Fryer Heater Health",
-              "NodeId": "ns=4;i=136",
-              "TelemetryName": "fryer_heater_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Fryer-005",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:25.481941",
-      "NodeId": "ns=4;i=137",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Fryer:1",
-      "Interfaces": [
-        {
-          "Name": "Fryer",
-          "InterfacelId": "urn:larouexsmartkitchen:FryerInterface:1",
-          "InterfaceInstanceName": "FryerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Fryer Temperature",
-              "NodeId": "ns=4;i=138",
-              "TelemetryName": "fryer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                349.2,
-                332.1,
-                350.9,
-                340.9,
-                353.7,
-                351.4
-              ]
-            },
-            {
-              "DisplayName": "Fryer Oil Quality",
-              "NodeId": "ns=4;i=139",
-              "TelemetryName": "fryer_oil_quality",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 10,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                100,
-                95,
-                92,
-                87,
-                86,
-                79,
-                75,
-                67,
-                62,
-                50
-              ]
-            },
-            {
-              "DisplayName": "Fryer Heater Health",
-              "NodeId": "ns=4;i=140",
-              "TelemetryName": "fryer_heater_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFridge-001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:25.857978",
-      "NodeId": "ns=4;i=141",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFridge:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFridgeInterface:1",
-          "InterfaceInstanceName": "StandingFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Fridge Temperature",
-              "NodeId": "ns=4;i=142",
-              "TelemetryName": "standing_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Humidity",
-              "NodeId": "ns=4;i=143",
-              "TelemetryName": "standing_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Open Count",
-              "NodeId": "ns=4;i=144",
-              "TelemetryName": "standing_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Ajar",
-              "NodeId": "ns=4;i=145",
-              "TelemetryName": "standing_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Compressor Health",
-              "NodeId": "ns=4;i=146",
-              "TelemetryName": "standing_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFridge-002",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:26.233118",
-      "NodeId": "ns=4;i=147",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFridge:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFridgeInterface:1",
-          "InterfaceInstanceName": "StandingFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Fridge Temperature",
-              "NodeId": "ns=4;i=148",
-              "TelemetryName": "standing_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Humidity",
-              "NodeId": "ns=4;i=149",
-              "TelemetryName": "standing_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Open Count",
-              "NodeId": "ns=4;i=150",
-              "TelemetryName": "standing_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Ajar",
-              "NodeId": "ns=4;i=151",
-              "TelemetryName": "standing_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Compressor Health",
-              "NodeId": "ns=4;i=152",
-              "TelemetryName": "standing_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFridge-003",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:26.656338",
-      "NodeId": "ns=4;i=153",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFridge:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFridgeInterface:1",
-          "InterfaceInstanceName": "StandingFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Fridge Temperature",
-              "NodeId": "ns=4;i=154",
-              "TelemetryName": "standing_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Humidity",
-              "NodeId": "ns=4;i=155",
-              "TelemetryName": "standing_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Open Count",
-              "NodeId": "ns=4;i=156",
-              "TelemetryName": "standing_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Ajar",
-              "NodeId": "ns=4;i=157",
-              "TelemetryName": "standing_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Compressor Health",
-              "NodeId": "ns=4;i=158",
-              "TelemetryName": "standing_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFridge-004",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:27.021341",
-      "NodeId": "ns=4;i=159",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFridge:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFridgeInterface:1",
-          "InterfaceInstanceName": "StandingFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Fridge Temperature",
-              "NodeId": "ns=4;i=160",
-              "TelemetryName": "standing_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Humidity",
-              "NodeId": "ns=4;i=161",
-              "TelemetryName": "standing_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Open Count",
-              "NodeId": "ns=4;i=162",
-              "TelemetryName": "standing_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Ajar",
-              "NodeId": "ns=4;i=163",
-              "TelemetryName": "standing_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Compressor Health",
-              "NodeId": "ns=4;i=164",
-              "TelemetryName": "standing_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFridge-005",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:27.421340",
-      "NodeId": "ns=4;i=165",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFridge:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFridge",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFridgeInterface:1",
-          "InterfaceInstanceName": "StandingFridgeInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Fridge Temperature",
-              "NodeId": "ns=4;i=166",
-              "TelemetryName": "standing_fridge_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Humidity",
-              "NodeId": "ns=4;i=167",
-              "TelemetryName": "standing_fridge_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Open Count",
-              "NodeId": "ns=4;i=168",
-              "TelemetryName": "standing_fridge_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Door Ajar",
-              "NodeId": "ns=4;i=169",
-              "TelemetryName": "standing_fridge_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Fridge Compressor Health",
-              "NodeId": "ns=4;i=170",
-              "TelemetryName": "standing_fridge_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFreezer-001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:27.783649",
-      "NodeId": "ns=4;i=171",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFreezerInterface:1",
-          "InterfaceInstanceName": "StandingFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Freezer Temperature",
-              "NodeId": "ns=4;i=172",
-              "TelemetryName": "standing_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Humidity",
-              "NodeId": "ns=4;i=173",
-              "TelemetryName": "standing_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Open Count",
-              "NodeId": "ns=4;i=174",
-              "TelemetryName": "standing_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Ajar",
-              "NodeId": "ns=4;i=175",
-              "TelemetryName": "standing_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Compressor Health",
-              "NodeId": "ns=4;i=176",
-              "TelemetryName": "standing_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFreezer-002",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:28.199649",
-      "NodeId": "ns=4;i=177",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFreezerInterface:1",
-          "InterfaceInstanceName": "StandingFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Freezer Temperature",
-              "NodeId": "ns=4;i=178",
-              "TelemetryName": "standing_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Humidity",
-              "NodeId": "ns=4;i=179",
-              "TelemetryName": "standing_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Open Count",
-              "NodeId": "ns=4;i=180",
-              "TelemetryName": "standing_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Ajar",
-              "NodeId": "ns=4;i=181",
-              "TelemetryName": "standing_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Compressor Health",
-              "NodeId": "ns=4;i=182",
-              "TelemetryName": "standing_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFreezer-003",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:28.582649",
-      "NodeId": "ns=4;i=183",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFreezerInterface:1",
-          "InterfaceInstanceName": "StandingFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Freezer Temperature",
-              "NodeId": "ns=4;i=184",
-              "TelemetryName": "standing_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Humidity",
-              "NodeId": "ns=4;i=185",
-              "TelemetryName": "standing_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Open Count",
-              "NodeId": "ns=4;i=186",
-              "TelemetryName": "standing_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Ajar",
-              "NodeId": "ns=4;i=187",
-              "TelemetryName": "standing_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Compressor Health",
-              "NodeId": "ns=4;i=188",
-              "TelemetryName": "standing_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFreezer-004",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:29.129652",
-      "NodeId": "ns=4;i=189",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFreezerInterface:1",
-          "InterfaceInstanceName": "StandingFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Freezer Temperature",
-              "NodeId": "ns=4;i=190",
-              "TelemetryName": "standing_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Humidity",
-              "NodeId": "ns=4;i=191",
-              "TelemetryName": "standing_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Open Count",
-              "NodeId": "ns=4;i=192",
-              "TelemetryName": "standing_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Ajar",
-              "NodeId": "ns=4;i=193",
-              "TelemetryName": "standing_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Compressor Health",
-              "NodeId": "ns=4;i=194",
-              "TelemetryName": "standing_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-StandingFreezer-005",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:29.567648",
-      "NodeId": "ns=4;i=195",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:StandingFreezer:1",
-      "Interfaces": [
-        {
-          "Name": "StandingFreezer",
-          "InterfacelId": "urn:larouexsmartkitchen:StandingFreezerInterface:1",
-          "InterfaceInstanceName": "StandingFreezerInterface",
-          "Variables": [
-            {
-              "DisplayName": "Standing Freezer Temperature",
-              "NodeId": "ns=4;i=196",
-              "TelemetryName": "standing_freezer_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Humidity",
-              "NodeId": "ns=4;i=197",
-              "TelemetryName": "standing_freezer_humidity",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                54.1,
-                63.0,
-                72.3,
-                73.4,
-                74.5
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Open Count",
-              "NodeId": "ns=4;i=198",
-              "TelemetryName": "standing_freezer_door_open_count",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                7,
-                9,
-                5,
-                11,
-                15
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Door Ajar",
-              "NodeId": "ns=4;i=199",
-              "TelemetryName": "standing_freezer_door_ajar",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                300,
-                456,
-                633,
-                232,
-                102
-              ]
-            },
-            {
-              "DisplayName": "Standing Freezer Compressor Health",
-              "NodeId": "ns=4;i=200",
-              "TelemetryName": "standing_freezer_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-ColdTable-001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:29.934649",
-      "NodeId": "ns=4;i=201",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:ColdTable:1",
-      "Interfaces": [
-        {
-          "Name": "ColdTable",
-          "InterfacelId": "urn:larouexsmartkitchen:ColdTableInterface:1",
-          "InterfaceInstanceName": "ColdTableInterface",
-          "Variables": [
-            {
-              "DisplayName": "Cold Table Temperature",
-              "NodeId": "ns=4;i=202",
-              "TelemetryName": "cold_table_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Cold Table Compressor Health",
-              "NodeId": "ns=4;i=203",
-              "TelemetryName": "cold_table_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-ColdTable-002",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:30.449697",
-      "NodeId": "ns=4;i=204",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:ColdTable:1",
-      "Interfaces": [
-        {
-          "Name": "ColdTable",
-          "InterfacelId": "urn:larouexsmartkitchen:ColdTableInterface:1",
-          "InterfaceInstanceName": "ColdTableInterface",
-          "Variables": [
-            {
-              "DisplayName": "Cold Table Temperature",
-              "NodeId": "ns=4;i=205",
-              "TelemetryName": "cold_table_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Cold Table Compressor Health",
-              "NodeId": "ns=4;i=206",
-              "TelemetryName": "cold_table_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-ColdTable-003",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:30.829695",
-      "NodeId": "ns=4;i=207",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:ColdTable:1",
-      "Interfaces": [
-        {
-          "Name": "ColdTable",
-          "InterfacelId": "urn:larouexsmartkitchen:ColdTableInterface:1",
-          "InterfaceInstanceName": "ColdTableInterface",
-          "Variables": [
-            {
-              "DisplayName": "Cold Table Temperature",
-              "NodeId": "ns=4;i=208",
-              "TelemetryName": "cold_table_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Cold Table Compressor Health",
-              "NodeId": "ns=4;i=209",
-              "TelemetryName": "cold_table_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-ColdTable-004",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:31.183692",
-      "NodeId": "ns=4;i=210",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:ColdTable:1",
-      "Interfaces": [
-        {
-          "Name": "ColdTable",
-          "InterfacelId": "urn:larouexsmartkitchen:ColdTableInterface:1",
-          "InterfaceInstanceName": "ColdTableInterface",
-          "Variables": [
-            {
-              "DisplayName": "Cold Table Temperature",
-              "NodeId": "ns=4;i=211",
-              "TelemetryName": "cold_table_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Cold Table Compressor Health",
-              "NodeId": "ns=4;i=212",
-              "TelemetryName": "cold_table_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-ColdTable-005",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:31.507693",
-      "NodeId": "ns=4;i=213",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:ColdTable:1",
-      "Interfaces": [
-        {
-          "Name": "ColdTable",
-          "InterfacelId": "urn:larouexsmartkitchen:ColdTableInterface:1",
-          "InterfaceInstanceName": "ColdTableInterface",
-          "Variables": [
-            {
-              "DisplayName": "Cold Table Temperature",
-              "NodeId": "ns=4;i=214",
-              "TelemetryName": "cold_table_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                39.45,
-                39.23,
-                39.9,
-                41.54,
-                42.28,
-                43.23
-              ]
-            },
-            {
-              "DisplayName": "Cold Table Compressor Health",
-              "NodeId": "ns=4;i=215",
-              "TelemetryName": "cold_table_compressor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Dishwasher-001",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:31.817692",
-      "NodeId": "ns=4;i=216",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Dishwasher:1",
-      "Interfaces": [
-        {
-          "Name": "Dishwasher",
-          "InterfacelId": "urn:larouexsmartkitchen:DishwasherInterface:1",
-          "InterfaceInstanceName": "DishwasherInterface",
-          "Variables": [
-            {
-              "DisplayName": "Dishwasher Temperature",
-              "NodeId": "ns=4;i=217",
-              "TelemetryName": "dishwasher_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                161.45,
-                160.23,
-                162.9,
-                159.54,
-                158.28,
-                163.23
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Wash Cycles",
-              "NodeId": "ns=4;i=218",
-              "TelemetryName": "dishwasher_wash_cycles",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                12,
-                13,
-                16,
-                17,
-                11
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Motor Health",
-              "NodeId": "ns=4;i=219",
-              "TelemetryName": "dishwasher_motor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Heating Element Health",
-              "NodeId": "ns=4;i=220",
-              "TelemetryName": "dishwasher_heating_element_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Dishwasher-002",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:32.198042",
-      "NodeId": "ns=4;i=221",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Dishwasher:1",
-      "Interfaces": [
-        {
-          "Name": "Dishwasher",
-          "InterfacelId": "urn:larouexsmartkitchen:DishwasherInterface:1",
-          "InterfaceInstanceName": "DishwasherInterface",
-          "Variables": [
-            {
-              "DisplayName": "Dishwasher Temperature",
-              "NodeId": "ns=4;i=222",
-              "TelemetryName": "dishwasher_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                161.45,
-                160.23,
-                162.9,
-                159.54,
-                158.28,
-                163.23
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Wash Cycles",
-              "NodeId": "ns=4;i=223",
-              "TelemetryName": "dishwasher_wash_cycles",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                12,
-                13,
-                16,
-                17,
-                11
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Motor Health",
-              "NodeId": "ns=4;i=224",
-              "TelemetryName": "dishwasher_motor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Heating Element Health",
-              "NodeId": "ns=4;i=225",
-              "TelemetryName": "dishwasher_heating_element_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Dishwasher-003",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:32.513188",
-      "NodeId": "ns=4;i=226",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Dishwasher:1",
-      "Interfaces": [
-        {
-          "Name": "Dishwasher",
-          "InterfacelId": "urn:larouexsmartkitchen:DishwasherInterface:1",
-          "InterfaceInstanceName": "DishwasherInterface",
-          "Variables": [
-            {
-              "DisplayName": "Dishwasher Temperature",
-              "NodeId": "ns=4;i=227",
-              "TelemetryName": "dishwasher_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                161.45,
-                160.23,
-                162.9,
-                159.54,
-                158.28,
-                163.23
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Wash Cycles",
-              "NodeId": "ns=4;i=228",
-              "TelemetryName": "dishwasher_wash_cycles",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                12,
-                13,
-                16,
-                17,
-                11
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Motor Health",
-              "NodeId": "ns=4;i=229",
-              "TelemetryName": "dishwasher_motor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Heating Element Health",
-              "NodeId": "ns=4;i=230",
-              "TelemetryName": "dishwasher_heating_element_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Dishwasher-004",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:32.905239",
-      "NodeId": "ns=4;i=231",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Dishwasher:1",
-      "Interfaces": [
-        {
-          "Name": "Dishwasher",
-          "InterfacelId": "urn:larouexsmartkitchen:DishwasherInterface:1",
-          "InterfaceInstanceName": "DishwasherInterface",
-          "Variables": [
-            {
-              "DisplayName": "Dishwasher Temperature",
-              "NodeId": "ns=4;i=232",
-              "TelemetryName": "dishwasher_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                161.45,
-                160.23,
-                162.9,
-                159.54,
-                158.28,
-                163.23
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Wash Cycles",
-              "NodeId": "ns=4;i=233",
-              "TelemetryName": "dishwasher_wash_cycles",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                12,
-                13,
-                16,
-                17,
-                11
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Motor Health",
-              "NodeId": "ns=4;i=234",
-              "TelemetryName": "dishwasher_motor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Heating Element Health",
-              "NodeId": "ns=4;i=235",
-              "TelemetryName": "dishwasher_heating_element_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Name": "larouex-smart-kitchen-Dishwasher-005",
-      "Connected": true,
-      "ConnectedDateTime": "2020-11-12 13:31:33.265239",
-      "NodeId": "ns=4;i=236",
-      "DeviceType": "Devices",
-      "DeviceCapabilityModelId": "urn:LarouexSmartKitchen:Dishwasher:1",
-      "Interfaces": [
-        {
-          "Name": "Dishwasher",
-          "InterfacelId": "urn:larouexsmartkitchen:DishwasherInterface:1",
-          "InterfaceInstanceName": "DishwasherInterface",
-          "Variables": [
-            {
-              "DisplayName": "Dishwasher Temperature",
-              "NodeId": "ns=4;i=237",
-              "TelemetryName": "dishwasher_temperature",
-              "IoTCDataType": "float",
-              "Frequency": "Ring3",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 6,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                161.45,
-                160.23,
-                162.9,
-                159.54,
-                158.28,
-                163.23
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Wash Cycles",
-              "NodeId": "ns=4;i=238",
-              "TelemetryName": "dishwasher_wash_cycles",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                12,
-                13,
-                16,
-                17,
-                11
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Motor Health",
-              "NodeId": "ns=4;i=239",
-              "TelemetryName": "dishwasher_motor_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            },
-            {
-              "DisplayName": "Dishwasher Heating Element Health",
-              "NodeId": "ns=4;i=240",
-              "TelemetryName": "dishwasher_heating_element_health",
-              "IoTCDataType": "integer",
-              "Frequency": "Ring2",
-              "OnlyOnValueChange": false,
-              "RangeValueCount": 5,
-              "RangeValueCurrent": 1,
-              "RangeValues": [
-                99,
-                98,
-                97,
-                96,
-                95
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "Name": "Ambient",
+    "InterfacelId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:AmbientInterface;1",
+    "InterfaceInstanceName": "AmbientInterface",
+    "Created": "2021-01-29 15:29:44.649971",
+    "Variables": [
+      {
+        "DisplayName": "Outside Temperature",
+        "TelemetryName": "outside_temperature",
+        "IoTCDataType": "float",
+        "Frequency": "Ring5",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          72.45,
+          73.23,
+          85.9,
+          91.54,
+          73.28
+        ]
+      },
+      {
+        "DisplayName": "Outside Humidity",
+        "TelemetryName": "outside_humidity",
+        "IoTCDataType": "float",
+        "Frequency": "Ring5",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          54.1,
+          63.0,
+          72.3,
+          73.4,
+          74.5
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "HVAC",
+    "InterfacelId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:HVACInterface;1",
+    "InterfaceInstanceName": "HVACInterface",
+    "Created": "2021-01-29 15:29:44.745972",
+    "Variables": [
+      {
+        "DisplayName": "HVAC Airflow Temperature",
+        "TelemetryName": "hvac_airflow_temperature",
+        "IoTCDataType": "float",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 6,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          72.45,
+          73.23,
+          73.9,
+          71.54,
+          72.28,
+          73.23
+        ]
+      },
+      {
+        "DisplayName": "HVAC Airflow CFM",
+        "TelemetryName": "hvac_cfm_airflow",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          127,
+          121,
+          131,
+          130,
+          129
+        ]
+      },
+      {
+        "DisplayName": "HVAC Main Motor RPM",
+        "TelemetryName": "hvac_rpm_mainmotor",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          18000,
+          18500,
+          18200,
+          19000,
+          19200
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "WalkinFridge",
+    "InterfacelId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:WalkinFridgeInterface;1",
+    "InterfaceInstanceName": "WalkinFridgeInterface",
+    "Created": "2021-01-29 15:29:44.794972",
+    "Variables": [
+      {
+        "DisplayName": "Walkin Fridge Temperature",
+        "TelemetryName": "walkin_fridge_temperature",
+        "IoTCDataType": "float",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 6,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          39.45,
+          39.23,
+          39.9,
+          41.54,
+          42.28,
+          43.23
+        ]
+      },
+      {
+        "DisplayName": "Walkin Fridge Humidity",
+        "TelemetryName": "walkin_fridge_humidity",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          54.1,
+          63.0,
+          72.3,
+          73.4,
+          74.5
+        ]
+      },
+      {
+        "DisplayName": "Walkin Fridge Door Open Count",
+        "TelemetryName": "walkin_fridge_door_open_count",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          7,
+          9,
+          5,
+          11,
+          15
+        ]
+      },
+      {
+        "DisplayName": "Walkin Fridge Door Ajar",
+        "TelemetryName": "walkin_fridge_door_ajar",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          300,
+          456,
+          633,
+          232,
+          102
+        ]
+      },
+      {
+        "DisplayName": "Walkin Fridge Compressor Health",
+        "TelemetryName": "walkin_fridge_compressor_health",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          99,
+          98,
+          97,
+          96,
+          95
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "WalkinFreezer",
+    "InterfacelId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:WalkinFreezerInterface;1",
+    "InterfaceInstanceName": "WalkinFreezerInterface",
+    "Created": "2021-01-29 15:29:44.867972",
+    "Variables": [
+      {
+        "DisplayName": "Walkin Freezer Temperature",
+        "TelemetryName": "walkin_freezer_temperature",
+        "IoTCDataType": "float",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 6,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          0,
+          1.34,
+          2.21,
+          0.34,
+          3.22,
+          4.23
+        ]
+      },
+      {
+        "DisplayName": "Walkin Freezer Humidity",
+        "TelemetryName": "walkin_freezer_humidity",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          99.1,
+          98.0,
+          97.3,
+          93.4,
+          94.5
+        ]
+      },
+      {
+        "DisplayName": "Walkin Freezer Door Open Count",
+        "TelemetryName": "walkin_freezer_door_open_count",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          7,
+          9,
+          5,
+          11,
+          15
+        ]
+      },
+      {
+        "DisplayName": "Walkin Freezer Door Ajar",
+        "TelemetryName": "walkin_freezer_door_ajar",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          300,
+          456,
+          633,
+          232,
+          102
+        ]
+      },
+      {
+        "DisplayName": "Walkin Freezer Compressor Health",
+        "TelemetryName": "walkin_freezer_compressor_health",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          99,
+          98,
+          97,
+          96,
+          95
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Fryer",
+    "InterfacelId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:FryerInterface;1",
+    "InterfaceInstanceName": "FryerInterface",
+    "Created": "2021-01-29 15:29:44.964971",
+    "Variables": [
+      {
+        "DisplayName": "Fryer Temperature",
+        "TelemetryName": "fryer_temperature",
+        "IoTCDataType": "float",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 6,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          349.2,
+          332.1,
+          350.9,
+          340.9,
+          353.7,
+          351.4
+        ]
+      },
+      {
+        "DisplayName": "Fryer Oil Quality",
+        "TelemetryName": "fryer_oil_quality",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 10,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          100,
+          95,
+          92,
+          87,
+          86,
+          79,
+          75,
+          67,
+          62,
+          50
+        ]
+      },
+      {
+        "DisplayName": "Fryer Heater Health",
+        "TelemetryName": "fryer_heater_health",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          99,
+          98,
+          97,
+          96,
+          95
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "StandingFridge",
+    "InterfacelId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:StandingFridgeInterface;1",
+    "InterfaceInstanceName": "StandingFridgeInterface",
+    "Created": "2021-01-29 15:29:44.981971",
+    "Variables": [
+      {
+        "DisplayName": "Standing Fridge Temperature",
+        "TelemetryName": "standing_fridge_temperature",
+        "IoTCDataType": "float",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 6,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          39.45,
+          39.23,
+          39.9,
+          41.54,
+          42.28,
+          43.23
+        ]
+      },
+      {
+        "DisplayName": "Standing Fridge Humidity",
+        "TelemetryName": "standing_fridge_humidity",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          54.1,
+          63.0,
+          72.3,
+          73.4,
+          74.5
+        ]
+      },
+      {
+        "DisplayName": "Standing Fridge Door Open Count",
+        "TelemetryName": "standing_fridge_door_open_count",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          7,
+          9,
+          5,
+          11,
+          15
+        ]
+      },
+      {
+        "DisplayName": "Standing Fridge Door Ajar",
+        "TelemetryName": "standing_fridge_door_ajar",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          300,
+          456,
+          633,
+          232,
+          102
+        ]
+      },
+      {
+        "DisplayName": "Standing Fridge Compressor Health",
+        "TelemetryName": "standing_fridge_compressor_health",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          99,
+          98,
+          97,
+          96,
+          95
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "StandingFreezer",
+    "InterfacelId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:StandingFreezerInterface;1",
+    "InterfaceInstanceName": "StandingFreezerInterface",
+    "Created": "2021-01-29 15:29:45.007971",
+    "Variables": [
+      {
+        "DisplayName": "Standing Freezer Temperature",
+        "TelemetryName": "standing_freezer_temperature",
+        "IoTCDataType": "float",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 6,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          39.45,
+          39.23,
+          39.9,
+          41.54,
+          42.28,
+          43.23
+        ]
+      },
+      {
+        "DisplayName": "Standing Freezer Humidity",
+        "TelemetryName": "standing_freezer_humidity",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          54.1,
+          63.0,
+          72.3,
+          73.4,
+          74.5
+        ]
+      },
+      {
+        "DisplayName": "Standing Freezer Door Open Count",
+        "TelemetryName": "standing_freezer_door_open_count",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          7,
+          9,
+          5,
+          11,
+          15
+        ]
+      },
+      {
+        "DisplayName": "Standing Freezer Door Ajar",
+        "TelemetryName": "standing_freezer_door_ajar",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          300,
+          456,
+          633,
+          232,
+          102
+        ]
+      },
+      {
+        "DisplayName": "Standing Freezer Compressor Health",
+        "TelemetryName": "standing_freezer_compressor_health",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          99,
+          98,
+          97,
+          96,
+          95
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "ColdTable",
+    "InterfacelId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:ColdTableInterface;1",
+    "InterfaceInstanceName": "ColdTableInterface",
+    "Created": "2021-01-29 15:29:45.009970",
+    "Variables": [
+      {
+        "DisplayName": "Cold Table Temperature",
+        "TelemetryName": "cold_table_temperature",
+        "IoTCDataType": "float",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 6,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          39.45,
+          39.23,
+          39.9,
+          41.54,
+          42.28,
+          43.23
+        ]
+      },
+      {
+        "DisplayName": "Cold Table Compressor Health",
+        "TelemetryName": "cold_table_compressor_health",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          99,
+          98,
+          97,
+          96,
+          95
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "Dishwasher",
+    "InterfacelId": "dtmi:larouexSmartKitchen2049:LarouexSmartKitchen:DishwasherInterface;1",
+    "InterfaceInstanceName": "DishwasherInterface",
+    "Created": "2021-01-29 15:29:45.032969",
+    "Variables": [
+      {
+        "DisplayName": "Dishwasher Temperature",
+        "TelemetryName": "dishwasher_temperature",
+        "IoTCDataType": "float",
+        "Frequency": "Ring3",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 6,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          161.45,
+          160.23,
+          162.9,
+          159.54,
+          158.28,
+          163.23
+        ]
+      },
+      {
+        "DisplayName": "Dishwasher Wash Cycles",
+        "TelemetryName": "dishwasher_wash_cycles",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          12,
+          13,
+          16,
+          17,
+          11
+        ]
+      },
+      {
+        "DisplayName": "Dishwasher Motor Health",
+        "TelemetryName": "dishwasher_motor_health",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          99,
+          98,
+          97,
+          96,
+          95
+        ]
+      },
+      {
+        "DisplayName": "Dishwasher Heating Element Health",
+        "TelemetryName": "dishwasher_heating_element_health",
+        "IoTCDataType": "integer",
+        "Frequency": "Ring2",
+        "OnlyOnValueChange": false,
+        "RangeValueCount": 5,
+        "RangeValueCurrent": 1,
+        "RangeValues": [
+          99,
+          98,
+          97,
+          96,
+          95
+        ]
+      }
+    ]
+  }
+]

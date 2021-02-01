@@ -32,10 +32,6 @@ class TelemetryServer():
       self.telemetry_server_instance_stop = None
       self.telemetry_server_instance_init = None
 
-      # Logging Mappers
-      data = [x for x in self.config["ClassLoggingMaps"] if x["Name"] == "TelemetryServer"]
-      self.class_name_map = data[0]["LoggingId"]
-
       # Namespaces
       self.id_namespace_twins = None
       self.id_namespace_gateways = None
@@ -44,6 +40,10 @@ class TelemetryServer():
       # Load configuration
       self.config = []
       self.load_config()
+
+      # Logging Mappers
+      data = [x for x in self.config["ClassLoggingMaps"] if x["Name"] == "TelemetryServer"]
+      self.class_name_map = data[0]["LoggingId"]
 
       # Telemetry Mapping
       self.map_telemetry = []

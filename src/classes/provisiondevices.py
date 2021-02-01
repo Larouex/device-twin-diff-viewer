@@ -40,12 +40,20 @@ class ProvisionDevices():
       self.config = Config(self.logger)
       self.config = self.config.data
 
+      # Logging Mappers
+      data = [x for x in self.config["ClassLoggingMaps"] if x["Name"] == "ProvisionDevice"]
+      self.class_name_map = data[0]["LoggingId"]
+
       # Symmetric Key
       self.symmetrickey = SymmetricKey(self.logger)
 
-      # Secrets
-      self.secrets = Secrets(self.logger)
-      self.secrets_cache_data = self.secrets.data
+      # Secrets Cache
+      self.secrets = None
+      self.secrets_cache_data = []
+
+      # Devices Cache
+      self.devices_cache = None
+      self.devices_cache_data = []
 
       # meta
       self.application_uri = None
@@ -55,13 +63,8 @@ class ProvisionDevices():
       self.device_capability_model = []
       self.device_name_prefix = None
       self.ignore_interface_ids = []
-
-      # Devices Cache
-      self.devices_cache = DevicesCache(self.logger)
-      self.devices_cache_data = self.devices_cache.data
       self.device_to_provision = None
       self.device_to_provision_array = []
-
 
     # -------------------------------------------------------------------------------
     #   Function:   provision_devices
@@ -75,10 +78,12 @@ class ProvisionDevices():
       try:
 
         self.id_device = Id
-
         self.namespace = self.config["Device"]["NameSpace"]
         self.device_default_component_id = self.config["Device"]["DefaultComponentId"]
         self.device_name_prefix = self.config["Device"]["DeviceNamePrefix"]
+
+        # Load all our cache data
+        self.load_caches()
 
         # this is our working cache for things we provision in this session
         self.device_to_provision = self.create_device_to_provision()
@@ -100,61 +105,49 @@ class ProvisionDevices():
         # Azure IoT Central SDK call to set the DCM payload and provision the device
         provisioning_device_client.provisioning_payload = '{"iotcModelId":"%s"}' % (self.device_to_provision["Device"]["DefaultComponentId"])
         registration_result = await provisioning_device_client.register()
-        self.logger.info("[REGISTRATION RESULT] %s" % registration_result)
-        self.logger.info("[DEVICE SYMMETRIC KEY] %s" % self.device_to_provision["Device"]["Secrets"]["DeviceSymmetricKey"])
+        self.logger.info("[%s] RESULT %s" % (self.class_name_map, registration_result))
+        self.logger.info("[%s] DEVICE SYMMETRIC KEY %s" % (self.class_name_map, self.device_to_provision["Device"]["Secrets"]["DeviceSymmetricKey"]))
         self.device_to_provision["Device"]["Secrets"]["AssignedHub"] = registration_result.registration_state.assigned_hub
 
-        # Add Capabilities
+        # Add Capabilities/Interfaces
         for node in self.config["Nodes"]:
           self.device_to_provision["Device"]["Capabilities"].append(node["InterfaceInstanceName"])
 
-        # Now create/update our devices cache
-        secrets_found_device = False
-        devices_found_device = False
-
-        if len(self.devices_cache_data["Devices"]) > 0:
-
+        # Update Secrets Cache Data for Devices
+        existing_device = [x for x in self.secrets_cache_data["Devices"] if x["Device"]["Name"] == self.device_to_provision["Device"]["Name"]]
+        if len(existing_device) == 0:
+          self.secrets_cache_data["Devices"].append(self.device_to_provision)
+        else:
           index = 0
-          # Update Secrets Cache Data for Devices
           for device in self.secrets_cache_data["Devices"]:
             if device["Device"]["Name"] == self.device_to_provision["Device"]["Name"]:
-              self.secrets_cache_data["Devices"][index] = self.device_to_provision
-              secrets_found_device = True
+              self.secrets_cache_data["Devices"][index]["Device"] = self.device_to_provision["Device"]
               break
             else:
               index = index + 1
-
-          index = 0
-          # if we fell thru, add it
-          if secrets_found_device == False:
-            self.secrets_cache_data["Devices"].append(self.device_to_provision)
-
-          for device in self.devices_cache_data["Devices"]:
-            if device["Device"]["Name"] == self.device_to_provision["Device"]["Name"]:
-              self.devices_cache_data["Devices"][index] = self.device_to_provision
-              devices_found_device = True
-              break
-            else:
-              index = index + 1
-
-          # if we fell thru, add it
-          if devices_found_device == False:
-            self.devices_cache_data["Devices"].append(self.device_to_provision)
 
         # Update Full Device Information to the Secrets file.
         # IMPORTANT: This hides the secrets in file in .gitignore
         self.secrets.update_file_device_secrets(self.secrets_cache_data["Devices"])
 
-        # Save to the Device Cache and null the secrets
+        # Hide secrets from device cache file
+        self.device_to_provision["Device"]["Secrets"] = None
+        existing_device = [x for x in self.devices_cache_data["Devices"] if x["Device"]["Name"] == self.device_to_provision["Device"]["Name"]]
+        if len(existing_device) == 0:
+          self.devices_cache_data["Devices"].append(self.device_to_provision)
+
         index = 0
         for device in self.devices_cache_data["Devices"]:
-          self.devices_cache_data["Devices"][index]["Device"]["Secrets"] = None
-          index = index + 1
+          if device["Device"]["Name"] == self.device_to_provision["Device"]["Name"]:
+            self.devices_cache_data["Devices"][index]["Device"] = self.device_to_provision["Device"]
+            break
+          else:
+            index = index + 1
 
         self.devices_cache.update_file(self.devices_cache_data)
 
         print("************************************************")
-        print("DEVICE SUCCESSFULLY PROVISIONED: %s" % self.device_to_provision)
+        print("[%s] SUCCESS: %s" % (self.class_name_map, self.device_to_provision))
         print("************************************************")
 
         return
@@ -175,7 +168,7 @@ class ProvisionDevices():
         self.device_default_component_id = self.config["Device"]["DefaultComponentId"]
         self.device_to_provision["Device"] = self.create_device_capability_model()
         self.device_to_provision["Device"]["Secrets"] = self.create_device_connection()
-        self.logger.error("[PROVISION DEVICES] Device to Provision %s" % self.device_to_provision)
+        self.logger.error("[%s] Device to Provision %s" % (self.class_name_map, self.device_to_provision))
 
         return
 
@@ -194,6 +187,7 @@ class ProvisionDevices():
           }
         }
       }
+
       return newDeviceToProvision
 
     # -------------------------------------------------------------------------------
@@ -208,6 +202,7 @@ class ProvisionDevices():
         ],
         "LastProvisioned": str(datetime.datetime.now())
       }
+
       return newDeviceCapabilityModel
 
     # -------------------------------------------------------------------------------
@@ -220,6 +215,7 @@ class ProvisionDevices():
         "InterfacelId": Id,
         "InterfaceInstanceName": instantName
       }
+
       return newInterface
 
     # -------------------------------------------------------------------------------
@@ -238,5 +234,21 @@ class ProvisionDevices():
         "DeviceSymmetricKey": device_symmetric_key,
         "LastProvisioned": str(datetime.datetime.now())
       }
+
       return newDeviceSecret
 
+    # -------------------------------------------------------------------------------
+    #   Function:   load devices as write each success
+    #   Usage:      None
+    # -------------------------------------------------------------------------------
+    def load_caches(self):
+
+      # Secrets Cache
+      self.secrets = Secrets(self.logger)
+      self.secrets_cache_data = self.secrets.data
+
+      # Devices Cache
+      self.devices_cache = DevicesCache(self.logger)
+      self.devices_cache_data = self.devices_cache.data
+
+      return
