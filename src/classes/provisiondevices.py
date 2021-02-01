@@ -10,7 +10,7 @@
 #   (c) 2021 Larouex Software Design LLC
 #   This code is licensed under MIT license (see LICENSE.txt for details)
 # ==================================================================================
-import time, logging, string, json, os, binascii, struct, threading, asyncio, datetime
+import time, logging, string, json, os, binascii, threading, datetime, pprint
 
 # Sur classes
 from classes.devicescache import DevicesCache
@@ -89,9 +89,10 @@ class ProvisionDevices():
         self.device_to_provision = self.create_device_to_provision()
         self.device_create()
 
-        print("************************************************")
-        print("DEVICE TO PROVISION: %s" % self.device_to_provision)
-        print("************************************************")
+        self.logger.info("************************************************")
+        self.logger.info("[%s] DEVICE TO PROVISION" % self.class_name_map)
+        self.logger.info(pprint.pformat(self.device_to_provision))
+        self.logger.info("************************************************")
 
         # Azure IoT Central SDK Call to create the provisioning_device_client
         provisioning_device_client = ProvisioningDeviceClient.create_from_symmetric_key(
@@ -99,7 +100,7 @@ class ProvisionDevices():
           registration_id = self.device_to_provision["Device"]["Name"],
           id_scope = self.secrets.get_scope_id(),
           symmetric_key = self.device_to_provision["Device"]["Secrets"]["DeviceSymmetricKey"],
-          websockets=True
+         websockets=True
         )
 
         # Azure IoT Central SDK call to set the DCM payload and provision the device
@@ -146,9 +147,10 @@ class ProvisionDevices():
 
         self.devices_cache.update_file(self.devices_cache_data)
 
-        print("************************************************")
-        print("[%s] SUCCESS: %s" % (self.class_name_map, self.device_to_provision))
-        print("************************************************")
+        self.logger.info("************************************************")
+        self.logger.info("[%s] SUCCESS:" % self.class_name_map)
+        self.logger.info(pprint.pformat(self.device_to_provision))
+        self.logger.info("************************************************")
 
         return
 
@@ -168,7 +170,6 @@ class ProvisionDevices():
         self.device_default_component_id = self.config["Device"]["DefaultComponentId"]
         self.device_to_provision["Device"] = self.create_device_capability_model()
         self.device_to_provision["Device"]["Secrets"] = self.create_device_connection()
-        self.logger.error("[%s] Device to Provision %s" % (self.class_name_map, self.device_to_provision))
 
         return
 

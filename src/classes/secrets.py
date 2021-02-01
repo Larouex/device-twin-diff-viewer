@@ -56,7 +56,7 @@ class Secrets():
     def update_file_device_secrets(self, data):
         with open('secrets.json', 'w') as configs_file:
             alerts = self.load_alerts()
-            self.logger.info(alerts["Alerts"]["Secrets"]["Updated"].format(self.data))
+            self.logger.debug(alerts["Alerts"]["Secrets"]["Updated"].format(self.data))
             self.data["Devices"] = data
             configs_file.write(json.dumps(self.data, indent=2))
 

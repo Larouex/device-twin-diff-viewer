@@ -10,6 +10,7 @@ hmac
 cryptography
 argparse
 pypubsub
+prettyprint
 azure.iot.hub
 azure.identity
 azure.keyvault.certificates
