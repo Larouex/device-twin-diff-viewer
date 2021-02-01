@@ -27,8 +27,12 @@ class DeviceClient():
       self.logger = Log
 
       # Load configuration
-      self.config = []
-      self.load_config()
+      config = Config(self.logger)
+      self.config = config.data
+
+      # Load the secrets
+      secrets = Secrets(self.logger)
+      self.secrets = secrets.data
 
       # Azure Device
       self.device_name = DeviceName
@@ -47,26 +51,28 @@ class DeviceClient():
 
       try:
 
-        # load the secrets
-        secrets = Secrets(self.logger)
-        secrets.init()
-        self.device_secrets = secrets.get_device_secrets(self.device_name)
-        self.device_client = IoTHubDeviceClient.create_from_symmetric_key(
-            symmetric_key = self.device_secrets["DeviceSymmetricKey"],
-            hostname = self.device_secrets["AssignedHub"],
-            device_id = self.device_name,
-            websockets=True
-        )
+        # Get the device secrets from the Secrets section for Devices, this
+        # is captured and written during provisioning
+        self.device_secrets = [x for x in self.secrets["Devices"] if x["Device"]["Name"] == self.device_name]
+
+        if len(self.device_secrets) > 0:
+
+          self.device_client = IoTHubDeviceClient.create_from_symmetric_key(
+              symmetric_key = self.device_secrets[0]["Device"]["Secrets"]["DeviceSymmetricKey"],
+              hostname = self.device_secrets[0]["Device"]["Secrets"]["AssignedHub"],
+              device_id = self.device_name,
+              websockets=True
+          )
 
         await self.device_client.connect()
         self.logger.info("[%s] %s" % (self.class_name_map, self.device_client))
+
+        return
 
       except Exception as ex:
         self.logger.error("[ERROR] %s" % ex)
         self.logger.error("[TERMINATING] We encountered an error creating and connecting the device for %s" % self.class_name_map)
         return None
-
-      return
 
     # -------------------------------------------------------------------------------
     #   Function:   send_telemetry
@@ -82,20 +88,13 @@ class DeviceClient():
       await self.device_client.send_message(msg)
       self.logger.info("[MESSAGE] %s" % msg)
 
+      return
+
     # -------------------------------------------------------------------------------
     #   Function:   disconnect
     #   Usage:      Disconnects from the IoT Hub
     # -------------------------------------------------------------------------------
     async def disconnect(self):
       self.device_client.disconnect()
-      return
 
-    # -------------------------------------------------------------------------------
-    #   Function:   load_config
-    #   Usage:      Loads the configuration from file
-    # -------------------------------------------------------------------------------
-    def load_config(self):
-
-      config = Config(self.logger)
-      self.config = config.data
       return

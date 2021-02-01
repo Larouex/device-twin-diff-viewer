@@ -20,7 +20,6 @@ from classes.deviceclient import DeviceClient
 from classes.devicescache import DevicesCache
 from classes.maptelemetry import MapTelemetry
 
-
 global Name
 global InterfacelId
 global InterfaceInstanceName
@@ -67,7 +66,6 @@ class DeviceFleetServer():
       # Device client list connected to Azure IoT Central/Hub
       self.device_client_dict = {}
 
-
     # -------------------------------------------------------------------------------
     #   Function:   run
     #   Usage:      The start function starts the Device Fleet
@@ -81,14 +79,8 @@ class DeviceFleetServer():
         # Subscribe to the Telemetry Server Publication of Telemetry Data
         pub.subscribe(self.listener, pub.ALL_TOPICS)
 
-        print("HERE")
-        print(self.devicescache)
-
         # Grab the Telemetry Enumeration (populated in TelemetryServer.setup())
         self.map_telemetry = TelemetryServer.get_map_telemetry()
-
-        print("HERE2")
-        print(self.map_telemetry)
 
         # Capture the index and list of connections
         index = 0
@@ -100,11 +92,11 @@ class DeviceFleetServer():
           await device_proxy.connect()
           self.logger.info("[%s] CONNECTED %s" % (self.class_name_map, device_proxy))
           self.device_client_dict[device["Device"]["Name"]] = device_proxy
-          #self.device_client.append(device_proxy)
-          self.map_telemetry["Devices"][index]["Connected"] = True
-          self.map_telemetry["Devices"][index]["ConnectedDateTime"] = str(datetime.datetime.now())
+          #self.map_telemetry["Devices"][index]["Device"]["Connected"] = True
+          #self.map_telemetry["Devices"][index]["Device"]["ConnectedDateTime"] = str(datetime.datetime.now())
           index = index + 1
 
+        self.logger.info("[%s LOOP] Starting..." % (self.class_name_map))
         while True:
 
           for telemetry in self.map_telemetry:
@@ -119,7 +111,7 @@ class DeviceFleetServer():
             self.logger.info("[%s LOOP] PUBLISHED: %s" % (self.class_name_map, map_telemetry_interfaces))
 
             # Enumerate the devices and send telemetry
-            for device in self.map_telemetry["Devices"]:
+            for device in self.devicescache["Devices"]:
 
               # hard wait for throttling, adjust as needed
               await asyncio.sleep(1)
@@ -128,7 +120,7 @@ class DeviceFleetServer():
               self.logger.info("[%s LOOP] InterfacelId: %s" % (self.class_name_map, map_telemetry_interfaces["InterfacelId"]))
               self.logger.info("[%s LOOP] InterfaceInstanceName: %s" % (self.class_name_map, map_telemetry_interfaces["InterfaceInstanceName"]))
 
-              device_proxy = self.device_client_dict[device["Name"]]
+              device_proxy = self.device_client_dict[device["Device"]["Name"]]
               await device_proxy.send_telemetry(map_telemetry_interfaces["Variables"], map_telemetry_interfaces["InterfacelId"], map_telemetry_interfaces["InterfaceInstanceName"])
               self.logger.info("[%s LOOP] PAYLOAD SENT SUCCESS" % self.class_name_map)
 

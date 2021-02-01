@@ -20,6 +20,7 @@ from azure.identity import ClientSecretCredential
 class Secrets():
 
     def __init__(self, Log):
+
       # load file
       self.logger = Log
       self.data = []
@@ -37,8 +38,6 @@ class Secrets():
       self.gateway_primary_key = None
       self.gateway_secondary_key = None
 
-      self.init()
-
     # -------------------------------------------------------------------------------
     #   Function:   load_file
     #   Usage:      Load the Secrets.json file and execute __init()
@@ -48,6 +47,11 @@ class Secrets():
         self.data = json.load(config_file)
         alerts = self.load_alerts()
         self.logger.debug(alerts["Alerts"]["Secrets"]["Loaded"].format(self.data))
+
+      # Initiate the Secrets
+      self.init()
+
+      return
 
     # -------------------------------------------------------------------------------
     #   Function:   update_file_device_secrets
@@ -118,6 +122,7 @@ class Secrets():
       self.logger.debug("[DEVICE SECONDARY KEY]: %s" % self.device_secondary_key)
       self.logger.debug("[GATEWAY PRIMARY KEY]: %s" % self.gateway_primary_key)
       self.logger.debug("[GATEWAY SECONDARY KEY]: %s" % self.gateway_secondary_key)
+
       return
 
     def get_provisioning_host(self):
@@ -140,12 +145,3 @@ class Secrets():
 
     def get_devices_secrets_data(self):
       return self.data["Devices"]
-
-    # -------------------------------------------------------------------------------
-    #   Function:   get_device_secrets
-    #   Usage:      Single Device Secret
-    # -------------------------------------------------------------------------------
-    def get_device_secrets(self, DeviceName):
-      data = [x for x in self.data["Devices"] if x["Name"] == DeviceName][0]
-      return data
-
